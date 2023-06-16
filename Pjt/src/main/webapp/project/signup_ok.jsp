@@ -1,3 +1,5 @@
+<%@page import="project.LoginDao"%>
+<%@page import="project.LoginDto"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -7,9 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<% 
 	request.setCharacterEncoding("utf-8");
 
-	String id = request.getParameter("email");
+	String email = request.getParameter("email");
 	String name = request.getParameter("name");
 	String pwd = request.getParameter("pwd");
 	String nickname = request.getParameter("nickname");
@@ -21,5 +24,6 @@
 	
 	dao.insertLogin(dto);	
 	response.sendRedirect("list.jsp");
+%>
 </body>
 </html>

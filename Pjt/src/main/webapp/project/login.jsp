@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="login.css">
 </head>
@@ -25,14 +25,13 @@
         </div>
     </header>
 
-    <div class="signup-container">
+    <div class="signup-container">	
         <h2>회원가입</h2>
-        <form action = "signup_ok.jsp" method = "post">
-            <input type="text" placeholder="이름" required>
-            <input type="email" placeholder="이메일" required>
-            <input type="password" placeholder="비밀번호" required>
-            <input type="password" placeholder="비밀번호 재입력" required>
-            <input type="text" placeholder="닉네임" required>
+        <form action = "signup_ok.jsp" method = "get">
+            <input type="text" placeholder="이름" required name="name">
+            <input type="email" placeholder="이메일" required name="email">
+            <input type="password" placeholder="비밀번호" required name="pwd">
+            <input type="text" placeholder="닉네임" required name="nickname">
             <button type="submit">가입하기</button>
         </form>
         <p onclick="moveLogin()">이미 계정이 있으신가요? <a href="#">로그인</a></p>
