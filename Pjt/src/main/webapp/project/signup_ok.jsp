@@ -22,8 +22,7 @@
 	
 	LoginDao dao = new LoginDao();
 	
-	dao.insertLogin(dto);	
-	response.sendRedirect("list.jsp");
+	dao.insertLogin(dto);
 %>
 </body>
 </html>
