@@ -22,7 +22,7 @@
         <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
             회원가입
         </button>
-    </div>	
+    </div>
     </header>
   <div class="login-container">
     <h2>로그인</h2>
