@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
     scroll-behavior: smooth;
 }
@@ -18,6 +19,7 @@ header {
     padding: 20px;
     position: fixed;
     top: 0;
+    /* width: 100% */
     left: 0;
     right: 0;
     display: flex;
@@ -34,6 +36,7 @@ nav span {
     margin-right: 5px;
 }
 
+/* 로그인 버튼 */
 button {
     margin: 20px;
 }
@@ -102,49 +105,12 @@ header h1 {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-.container {
-    display: flex;
-    justify-content: center;
+/* Main 스타일 */
+main {
+    padding: 20px;
 }
 
-.main-list {
-    margin: 20px;
-    margin-bottom: 30px;
-    max-width: 600px;
-    width: 100%;
-}
-
-.main-info {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.author {
-    margin-right: 10px;
-}
-
-.main-info img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-.main-info small {
-    font-size: 12px;
-    margin-right: 10px;
-}
-
-.date {
-    position: absolute;
-    right: 0;
-    margin-right: 10px;
-}
-
-hr {
-    border: 1px solid #ddd;
-}
-
+/* Footer 스타일 */
 footer {
     background-image: url(../images/spotlight03.jpg);
     background-repeat: no-repeat;
@@ -158,57 +124,95 @@ footer {
     bottom: 0;
 }
 
-.comments {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.comment-form {
-    display: flex;
+.page-title {
+    text-align: center;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 
-.comment-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.comment-submit {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #1e6b7b;
-    color: #fff;
-    cursor: pointer;
-}
-
-.comment-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.comment-list li {
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-}
-
-.comment-author {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.comment-date {
-    font-size: 12px;
-    color: #777;
+.page-title h2 {
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
-.comment-content {
+.page-title small {
     font-size: 14px;
-    line-height: 1.5;
+    color: #888;
+}
+
+/* DB 내용 가져오기 */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* 게시판 리스트 스타일 */
+.post-list {
+    margin: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.post {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 20px;
+    
+    transition: background-color 0.3s ease;
+}
+
+.post:hover {
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.post-title {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-content {
+    color: #666;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-meta {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.post div #left {
+    display: flex;
+    width: 85%;
+}
+.post div p {
+    margin-left: 10px;
+}
+.post div #right {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post div #right img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.post div #right small {
+    font-size: 12px;
+    margin-right: 10px;
 }

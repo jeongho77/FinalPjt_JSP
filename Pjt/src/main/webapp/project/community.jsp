@@ -1,63 +1,55 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="community.css">
+<link rel="stylesheet" href="community_list.css">
 </head>
 <body>
-	 <header>
-        <h1 onclick="moveMain()">Nekarakubae</h1>
-        <nav>
-            <span onclick="moveCommunity()" class="w-btn">커뮤니티</span>
-            <span onclick="moveKnowledge()" class="w-btn">지식</span>
-            <span onclick="moveQ()" class="w-btn">질문과 답변</span>
-        </nav>
-        <div>
-            <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
-                로그인
-            </button>
-            <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
-                회원가입
-            </button>
-        </div>
-    </header>
-    <div class="page-title">
-        <h2>커뮤니티 게시판</h2>
-        <small>여러분들의 소통을 위한 공간입니다.</small>
-    </div>
-    <div class="container">
-        <section class="post-list">
-            <article class="post" onclick="moveCommunityPage()">
-                <h2 class="post-title">안녕하세요!</h2>
-                <p class="post-content">
-                    Baby, got me looking so crazy
-                    빠져버리는 daydream
-                    Got me feeling you
-                    너도 말해줄래
-                </p>
-                <div class="post-meta">
-                    <div id="left">
-                        <p>작성자 : 미연</p>
-                        <p>작성일 : 2023-06-17</p>
-                    </div>
-                    <div id="right">
-                        <img src="../images/icon_view.png" alt="조회수">
-                        <small>200</small>
-                        <img src="../images/icon_chat.png" alt="댓글">
-                        <small>10</small>
-                        <img src="../images/icon_heart.png" alt="좋아요">
-                        <small>20</small>
-                    </div>
+	<main class="container">
+        <section class="main-list">
+            <article class="main">
+                <div class="main-title">
+                    <h2>뉴진스의 하입보이</h2>
+                </div>
+                <hr>
+                <div class="main-info">
+                    <p class="author">이이잉</p>
+                    <img src="../images/icon_view.png" alt="조회수">
+                    <small>200</small>
+                    <p class="date">2023-06-17</p>
+                </div>
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu pulvinar nisl. Vestibulum
+                        cursus mi eu orci suscipit cursus. Sed interdum purus tellus, sed cursus sem sollicitudin vitae.
+                        Donec ultrices risus ut tellus eleifend, euismod facilisis sem cursus. Nullam nec purus massa.
+                        Duis auctor ex a dolor ultricies, et egestas mi convallis. Integer pharetra odio vitae est
+                        facilisis, at rhoncus ligula ullamcorper. Morbi dictum purus eget sem rutrum, id vestibulum
+                        turpis condimentum. Suspendisse potenti. Suspendisse condimentum libero at risus dignissim
+                        fringilla. Nullam tincidunt semper tellus, non pharetra risus placerat in. Mauris eu rutrum
+                        quam. Duis ullamcorper nunc vel ante fringilla, sed laoreet metus cursus.</p>
                 </div>
             </article>
 
+            <article class="comments">
+                <h3>댓글</h3>
+                <div class="comment-form">
+                    <input type="text" placeholder="댓글을 작성해주세요." class="comment-input">
+                    <button type="submit" class="comment-submit">등록</button>
+                </div>
+                <ul class="comment-list">
+                    <li>
+                        <p class="comment-author">댓글 작성자</p>
+                        <p class="comment-content">댓글 내용</p>
+                        <p class="comment-date">작성일시</p>
+    
+                    </li>
+                    <!-- 다른 댓글들 -->
+                </ul>
+            </article>
         </section>
-    </div>
-    <footer>
-        <p>Nekarakubae &copy; 2023. All rights reserved.</p>
-    </footer>
+    </main>
 </body>
 </html>

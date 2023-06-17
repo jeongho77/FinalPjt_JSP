@@ -54,6 +54,7 @@
             </ul>
         </div>
 
+              
         <div class="box" id="box1">
         <h2>커뮤니티 타이틀</h2>
         	<ul>
@@ -62,8 +63,7 @@
          	if ( count >= 2) {
          		break ;
          	}  
-         %>
-                <li>
+         %>  <li>
                     <h3><%=dto.getTitle()%></h3>
                     <small>작성자: <%=dto.getWriter() %> | 작성일: <%= dto.getRegdate() %></small>
                 </li>
