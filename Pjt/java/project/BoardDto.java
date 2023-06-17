@@ -9,7 +9,7 @@ package project;
 import java.util.Date;
 
 public class BoardDto {
-
+	 private int number;
 	 private String title;
 	 private int reply_cnt;
 	 private String writer;
@@ -18,7 +18,7 @@ public class BoardDto {
 	 private int like;
 	 private Date regdate;
 	 
-	 public BoardDto() {}
+	 public BoardDto(String title2, int reply_cnt2, String writer2, String content2, String view_cnt2, int like2, java.sql.Date date) {}
 	   
 	 public BoardDto(String title, int reply_cnt, String writer, String content, int view_cnt, int like, Date regdate) {
 		 this.title = title;
@@ -126,6 +126,25 @@ public class BoardDto {
 	 */
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
-	}		
+	}
+
+	/**
+	 * @return the number
+	 */
+	public int getNumber() {
+		return number;
+	}
+
+	/**
+	 * @param number the number to set
+	 */
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	/**
+	 * @return
+	 */
+		
 	 
 }
