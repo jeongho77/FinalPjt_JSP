@@ -1,5 +1,5 @@
 /*================================================
- * user : JH
+ * user : mj
  * date : 2023. 5. 10.
  * file_name : LoginDao.java
  * comments :
@@ -26,7 +26,7 @@ public class BoardDao {
 	private Connection getConnection() throws Exception{
 		InitialContext intCtv = new InitialContext();
 		
-		DataSource ds = (DataSource) intCtv.lookup("java:comp/env/jdbc/jh"); 
+		DataSource ds = (DataSource) intCtv.lookup("java:comp/env/jdbc/mj"); 
 		
 		Connection con = ds.getConnection();
 		
@@ -34,15 +34,14 @@ public class BoardDao {
 	}
 	
 	public void Com_Insert(BoardDto dto) {
-		String sql = "INSERT INTO com_board(title, writer, content) VALUES(?, ?, ?)";
+		String sql = "INSERT INTO com_board(title, content) VALUES(?, ?)";
 		
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 		){	
 			pstmt.setString(1, dto.getTitle());
-			pstmt.setString(2, dto.getWriter());
-			pstmt.setString(3, dto.getContent());
+			pstmt.setString(2, dto.getContent());
 			pstmt.executeUpdate();
 			
 		} catch (Exception e) {
