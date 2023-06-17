@@ -1,156 +1,157 @@
- /* 전체 스타일 */
- html {
-    scroll-behavior: smooth;
+/* 전체 스타일 */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    padding-top: 100px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
 }
 
 /* Header 스타일 */
 header {
-    background-image: url(../images/spotlight03.jpg);
-    color: #fff;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    /* width: 100% */
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-image: url(../images/spotlight03.jpg);
+  color: #fff;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  /* width: 100% */
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+header h1 {
+  margin: 0;
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-nav {
-   margin-left: 30px;
-   cursor: pointer;
+  
+ nav {
+  margin-left: 30px;
+  cursor: pointer;
 }
 
 nav span {
-   margin-right: 5px;
+  margin-right: 5px;
 }
 
 .w-btn {
-   position: relative;
-   border: none;
-   display: inline-block;
-   padding: 15px 30px;
-   border-radius: 15px;
-   font-family: "paybooc-Light", sans-serif;
-   text-decoration: none;
-   font-weight: 600;
-   transition: 0.25s;
+  position: relative;
+  border: none;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
 }
 
 .w-btn-outline {
-   position: relative;
-   padding: 15px 30px;
-   border-radius: 15px;
-   font-family: "paybooc-Light", sans-serif;
-   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-   text-decoration: none;
-   font-weight: 600;
-   transition: 0.25s;
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
 }
 .w-btn-indigo {
-   background-color: aliceblue;
-   color: #1e6b7b;
+  background-color: aliceblue;
+  color: #1e6b7b;
 }
 
 .w-btn-indigo-outline {
-   border: 3px solid aliceblue;
-   color: #1e6b7b;
+  border: 3px solid aliceblue;
+  color: #1e6b7b;
 }
 
 .w-btn-indigo-outline:hover {
-   color: #1e6b7b;
-   background: aliceblue;
+  color: #1e6b7b;
+  background: aliceblue;
 }
 .w-btn:hover {
-   letter-spacing: 2px;
-   transform: scale(1.2);
-   cursor: pointer;
+  letter-spacing: 2px;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .w-btn-outline:hover {
-   letter-spacing: 2px;
-   transform: scale(1.2);
-   cursor: pointer;
+  letter-spacing: 2px;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .w-btn:active {
-   transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .w-btn-outline:active {
-   transform: scale(1.5);
+  transform: scale(1.5);
 }
-
-header h1 {
-    margin: 0;
-    cursor: pointer;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  
+.login-container {
+  background-color: #fff;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 50px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
 }
-
-.signup-container {
-    background-color: #fff;
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 50px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
+  
+.login-container h2 {
+  margin-bottom: 20px;
 }
-
-.signup-container h2 {
-    margin-bottom: 30px;
+  
+.login-container form input {
+  display: block;
+  width: 95%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-
-.signup-container form input {
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  
+.login-container form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
-
-.signup-container form button {
-    width: 105%;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  
+.login-container form button:hover {
+  background-color: #555;
 }
-
-.signup-container form button:hover {
-    background-color: #555;
+  
+.login-container p {
+  margin-top: 20px;
 }
-
-.signup-container p {
-    margin-top: 25px;
+  
+.login-container p a {
+  color: #333;
 }
-
-.signup-container p a {
-    color: #333;
-}
-
-.signup-container p a:hover {
+  
+.login-container p a:hover {
     text-decoration: underline;
 }
-
- /* Footer 스타일 */
- footer {
-    background-image: url(../images/spotlight03.jpg);
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    position: absolute;
- }
+  
+/* Footer 스타일 */
+footer {
+  background-image: url(../images/spotlight03.jpg);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+} 

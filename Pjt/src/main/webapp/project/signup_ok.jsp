@@ -1,7 +1,7 @@
 <%@page import="project.LoginDao"%>
 <%@page import="project.LoginDto"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +24,7 @@
 	
 	dao.insertLogin(dto);
 	
-	//È¸¿ø°¡ÀÔ ¼º°ø½Ã ·Î±×ÀÎÃ¢À¸·Î ÀÌµ¿
+	//íšŒì›ê°€ìž… ì„±ê³µì‹œ ë¡œê·¸ì¸ì°½ìœ¼ë¡œ ì´ë™
 	response.sendRedirect("login.jsp");
 %>
 </body>

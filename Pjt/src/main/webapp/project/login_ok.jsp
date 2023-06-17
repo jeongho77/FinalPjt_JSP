@@ -1,7 +1,7 @@
 <%@page import="project.LoginDao"%>
 <%@page import="project.LoginDto"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,7 @@
 	String pwd = request.getParameter("pwd");
 	
 	LoginDao dao = new LoginDao();
-	LoginDto dto = dao.login(email, pwd);
+	LoginDto dto = dao.login(email, pwd); 
 %>
 </body>
 </html>

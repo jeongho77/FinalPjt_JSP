@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="login.css">
 </head>
@@ -11,27 +11,27 @@
 	<header>
     <h1 onclick="moveMain()">Nekarakubae</h1>
     <nav>
-        <span onclick="moveCommunity()" class="w-btn">Ä¿¹Â´ÏÆ¼</span>
-        <span onclick="moveKnowledge()" class="w-btn">Áö½Ä</span>
-        <span onclick="moveQ()" class="w-btn">Áú¹®°ú ´äº¯</span>
+        <span onclick="moveCommunity()" class="w-btn">ì»¤ë®¤ë‹ˆí‹°</span>
+        <span onclick="moveKnowledge()" class="w-btn">ì§€ì‹</span>
+        <span onclick="moveQ()" class="w-btn">ì§ˆë¬¸ê³¼ ë‹µë³€</span>
     </nav>
     <div>
         <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
-            ·Î±×ÀÎ
+            ë¡œê·¸ì¸
         </button>
         <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
-            È¸¿ø°¡ÀÔ
+            íšŒì›ê°€ì…
         </button>
     </div>
     </header>
   <div class="login-container">
-    <h2>·Î±×ÀÎ</h2>
+    <h2>ë¡œê·¸ì¸</h2>
     <form action = "login_ok.jsp" method = "get">
-      <input type="text" placeholder="¾ÆÀÌµğ" required name="email">
-      <input type="password" placeholder="ºñ¹Ğ¹øÈ£" required name="pwd">
-      <button type="submit">·Î±×ÀÎ</button>
+      <input type="text" placeholder="ì•„ì´ë””" required name="email">
+      <input type="password" placeholder="ë¹„ë°€ë²ˆí˜¸" required name="pwd">
+      <button type="submit">ë¡œê·¸ì¸</button>
     </form>
-    <p onclick="moveSignup()">°èÁ¤ÀÌ ¾øÀ¸½Å°¡¿ä? <a href="#">È¸¿ø°¡ÀÔ</a></p>
+    <p onclick="moveSignup()">ê³„ì •ì´ ì—†ìœ¼ì‹ ê°€ìš”? <a href="#">íšŒì›ê°€ì…</a></p>
   </div>
   <footer>
     <p>Nekarakubae &copy; 2023. All rights reserved.</p>
