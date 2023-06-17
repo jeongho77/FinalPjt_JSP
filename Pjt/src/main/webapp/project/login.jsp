@@ -1,44 +1,40 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 <link rel="stylesheet" href="login.css">
 </head>
 <body>
 	<header>
-        <h1 onclick="moveMain()">Nekarakubae</h1>
-        <nav>
-            <span onclick="moveCommunity()" class="w-btn">ì»¤ë®¤ë‹ˆí‹°</span>
-            <span onclick="moveKnowledge()" class="w-btn">ì§€ì‹</span>
-            <span onclick="moveQ()" class="w-btn">ì§ˆë¬¸ê³¼ ë‹µë³€</span>
-        </nav>
-        <div>
-            <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
-                ë¡œê·¸ì¸
-            </button>
-            <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
-                íšŒì›ê°€ì…
-            </button>
-        </div>
-    </header>
-
-    <div class="signup-container">	
-        <h2>íšŒì›ê°€ì…</h2>
-        <form action = "signup_ok.jsp" method = "get">
-            <input type="text" placeholder="ì´ë¦„" required name="name">
-            <input type="email" placeholder="ì´ë©”ì¼" required name="email">
-            <input type="password" placeholder="ë¹„ë°€ë²ˆí˜¸" required name="pwd">
-            <input type="text" placeholder="ë‹‰ë„¤ì„" required name="nickname">
-            <button type="submit">ê°€ì…í•˜ê¸°</button>
-        </form>
-        <p onclick="moveLogin()">ì´ë¯¸ ê³„ì •ì´ ìˆìœ¼ì‹ ê°€ìš”? <a href="#">ë¡œê·¸ì¸</a></p>
+    <h1 onclick="moveMain()">Nekarakubae</h1>
+    <nav>
+        <span onclick="moveCommunity()" class="w-btn">Ä¿¹Â´ÏÆ¼</span>
+        <span onclick="moveKnowledge()" class="w-btn">Áö½Ä</span>
+        <span onclick="moveQ()" class="w-btn">Áú¹®°ú ´äº¯</span>
+    </nav>
+    <div>
+        <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
+            ·Î±×ÀÎ
+        </button>
+        <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
+            È¸¿ø°¡ÀÔ
+        </button>
     </div>
-
-    <footer>
-        <p>Nekarakubae &copy; 2023. All rights reserved.</p>
-    </footer>
+    </header>
+  <div class="login-container">
+    <h2>·Î±×ÀÎ</h2>
+    <form action = "login_ok.jsp" method = "get">
+      <input type="text" placeholder="¾ÆÀÌµğ" required name="email">
+      <input type="password" placeholder="ºñ¹Ğ¹øÈ£" required name="pwd">
+      <button type="submit">·Î±×ÀÎ</button>
+    </form>
+    <p onclick="moveSignup()">°èÁ¤ÀÌ ¾øÀ¸½Å°¡¿ä? <a href="#">È¸¿ø°¡ÀÔ</a></p>
+  </div>
+  <footer>
+    <p>Nekarakubae &copy; 2023. All rights reserved.</p>
+  </footer>
 </body>
 </html>

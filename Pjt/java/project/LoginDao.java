@@ -3,6 +3,7 @@ package project;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.naming.InitialContext;
@@ -16,7 +17,7 @@ public class LoginDao {
 		private Connection getConnection() throws Exception{
 			InitialContext intCtv = new InitialContext();
 			
-			DataSource ds = (DataSource) intCtv.lookup("java:comp/env/jdbc/jh"); //한번에 연결되네? 왜?
+			DataSource ds = (DataSource) intCtv.lookup("java:comp/env/jdbc/mj"); //한번에 연결되네? 왜?
 			
 			Connection con = ds.getConnection();
 			
@@ -74,6 +75,27 @@ public class LoginDao {
 		      }
 		      return dtos;
 		   }
+		
+		public LoginDto login(String email, String pwd) {
+			String sql = "SELECT * FROM user WHERE email=? AND pwd=?";
+			LoginDto dto = new LoginDto();
+			
+			try(
+				Connection con = getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+				pstmt.setString(1, email);
+				pstmt.setString(2, pwd);
+				ResultSet rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					dto = new LoginDto(email, pwd);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return dto;
+		}
 		// 1. 접근제어자
 		// 2. 반환 데이터타입
 		// 3. 입력 매개변수
