@@ -17,7 +17,7 @@ public class LoginDao {
 		private Connection getConnection() throws Exception{
 			InitialContext intCtv = new InitialContext();
 			
-			DataSource ds = (DataSource) intCtv.lookup("java:comp/env/jdbc/jh"); //한번에 연결되네? 왜?
+			DataSource ds = (DataSource) intCtv.lookup("java:comp/env/jdbc/mj"); //한번에 연결되네? 왜?
 			
 			Connection con = ds.getConnection();
 			
@@ -78,7 +78,7 @@ public class LoginDao {
 		
 		public LoginDto login(String email, String pwd) {
 			String sql = "SELECT * FROM user WHERE email=? AND pwd=?";
-			LoginDto dto = new LoginDto();
+			LoginDto dto = null;
 			
 			try(
 				Connection con = getConnection();
