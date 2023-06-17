@@ -1,3 +1,6 @@
+<%@page import="project.BoardDto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="project.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -8,6 +11,10 @@
 <link rel="stylesheet" href="com_list.css">
 </head>
 <body>
+<%
+    BoardDao dao = new BoardDao();
+	ArrayList<BoardDto> dtos = dao.Com_list();
+%>
 	 <header>
         <h1 onclick="moveMain()">Nekarakubae</h1>
         <nav>
@@ -28,34 +35,32 @@
         <h2>커뮤니티 게시판</h2>
         <small>여러분들의 소통을 위한 공간입니다.</small>
     </div>
+    <%
+    for (BoardDto dto : dtos){ 
+    %>
     <div class="container">
         <section class="post-list">
-            <article class="post" onclick="moveCommunityPage()">
-                <h2 class="post-title">안녕하세요!</h2>
-                <p class="post-content">
-                    Baby, got me looking so crazy
-                    빠져버리는 daydream
-                    Got me feeling you
-                    너도 말해줄래
-                </p>
+            <article class="post">
+                <h2 class="post-title"> <a href = "com.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></h2>
                 <div class="post-meta">
                     <div id="left">
-                        <p>작성자 : 미연</p>
-                        <p>작성일 : 2023-06-17</p>
+                        <p>작성자 : <%=dto.getWriter() %></p>
+                        <p>작성일 : <%=dto.getRegdate() %></p>
                     </div>
                     <div id="right">
                         <img src="../images/icon_view.png" alt="조회수">
-                        <small>200</small>
+                        <small><%=dto.getView_cnt() %></small>
                         <img src="../images/icon_chat.png" alt="댓글">
-                        <small>10</small>
+                        <small><%=dto.getReply_cnt() %></small>
                         <img src="../images/icon_heart.png" alt="좋아요">
-                        <small>20</small>
+                        <small><%=dto.getLike() %></small>
                     </div>
                 </div>
             </article>
 
         </section>
     </div>
+    <%}%>
     <footer>
         <p>Nekarakubae &copy; 2023. All rights reserved.</p>
     </footer>

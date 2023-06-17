@@ -62,6 +62,7 @@ public class BoardDao {
 		) {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
+				int number = rs.getInt("number");
 				String title = rs.getString("title");
 				int reply_cnt = rs.getInt("reply_cnt");
 				String writer = rs.getString("writer");
@@ -70,7 +71,7 @@ public class BoardDao {
 				int like = rs.getInt("like");
 				Date date = rs.getDate("REGDATE");
 				
-				BoardDto dto = new BoardDto(title, reply_cnt, writer, content, view_cnt , like, date);
+				BoardDto dto = new BoardDto(number, title, reply_cnt, writer, content, view_cnt , like, date);
 				dtos.add(dto);
 			}
 		} catch (Exception e) {
@@ -101,8 +102,8 @@ public class BoardDao {
 	}
 	
 	public BoardDto Com_getOne(int id){
-		String sql = "SELECT * FROM com_board WHERE BCODE=?";
-		
+		String sql = "SELECT * FROM com_board WHERE number=?";
+		BoardDto dto = null;
 		try (
 			Connection con = getConnection();
 				
@@ -113,6 +114,7 @@ public class BoardDao {
 			ResultSet rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
+				int number = rs.getInt("number");
 				String title = rs.getString("title");
 				int reply_cnt = rs.getInt("reply_cnt");
 				String writer = rs.getString("writer");
@@ -120,7 +122,7 @@ public class BoardDao {
 				String view_cnt = rs.getString("view_cnt");
 				int like = rs.getInt("like");
 				Date date = rs.getDate("REGDATE");
-				BoardDto dto = new BoardDto(title , reply_cnt, writer, content , view_cnt,like,date);
+				dto = new BoardDto(number, title , reply_cnt, writer, content , view_cnt,like,date);
 			}
 			
 		} catch (Exception e) {

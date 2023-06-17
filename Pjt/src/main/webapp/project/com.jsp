@@ -1,3 +1,5 @@
+<%@page import="project.BoardDao"%>
+<%@page import="project.BoardDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -8,29 +10,28 @@
 <link rel="stylesheet" href="com.css">
 </head>
 <body>
+<% 
+int number = Integer.parseInt(request.getParameter("number"));
+
+BoardDao dao = new BoardDao();
+BoardDto dto = dao.Com_getOne(number);
+%>
 
 	<main class="container">
         <section class="main-list">
             <article class="main">
                 <div class="main-title">
-                    <h2>뉴진스의 하입보이</h2>
+                    <h2><%= dto.getTitle() %></h2>
                 </div>
                 <hr>
                 <div class="main-info">
-                    <p class="author">이이잉</p>
+                    <p class="author"><%= dto.getWriter() %></p>
                     <img src="../images/icon_view.png" alt="조회수">
-                    <small>200</small>
-                    <p class="date">2023-06-17</p>
+                    <small><%= dto.getView_cnt() %></small>
+                    <p class="date"><%= dto.getRegdate()%></p>
                 </div>
                 <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu pulvinar nisl. Vestibulum
-                        cursus mi eu orci suscipit cursus. Sed interdum purus tellus, sed cursus sem sollicitudin vitae.
-                        Donec ultrices risus ut tellus eleifend, euismod facilisis sem cursus. Nullam nec purus massa.
-                        Duis auctor ex a dolor ultricies, et egestas mi convallis. Integer pharetra odio vitae est
-                        facilisis, at rhoncus ligula ullamcorper. Morbi dictum purus eget sem rutrum, id vestibulum
-                        turpis condimentum. Suspendisse potenti. Suspendisse condimentum libero at risus dignissim
-                        fringilla. Nullam tincidunt semper tellus, non pharetra risus placerat in. Mauris eu rutrum
-                        quam. Duis ullamcorper nunc vel ante fringilla, sed laoreet metus cursus.</p>
+                    <p><%= dto.getContent() %></p>
                 </div>
             </article>
 
