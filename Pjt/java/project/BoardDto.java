@@ -29,6 +29,12 @@ public class BoardDto {
 		 this.like = like;
 		 this.regdate = regdate;
 	 }
+	 
+	 //게시판 글 작성 
+	 public BoardDto(String title, String content) {
+		 this.title = title;
+		 this.content = content;
+	 }
 
 	/**
 	 * @return the title
