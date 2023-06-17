@@ -27,7 +27,7 @@
         PrintWriter outPrint = response.getWriter();
         outPrint.println("<script>alert('회원 정보가 없습니다.'); location.href='login.jsp';</script>");
         // 로그인 페이지로 리다이렉트
-    }
+    } 
 %>
 </body>
 </html>
