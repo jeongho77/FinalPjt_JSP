@@ -37,7 +37,7 @@
     </div>
     <%
     for (BoardDto dto : dtos){ 
-    %>
+    %> 
     <div class="container">
         <section class="post-list">
             <article class="post">
