@@ -5,9 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="community_list.css">
+<link rel="stylesheet" href="com.css">
 </head>
 <body>
+
 	<main class="container">
         <section class="main-list">
             <article class="main">

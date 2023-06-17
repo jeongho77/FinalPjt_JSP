@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-        <form action="login_write_ok.jsp" method="get">
+        <form action="com_write_ok.jsp" method="get">
             <table class="table1" style="text-align:center; border: 1px solid #dddddd">
                 <thead>
                     <tr>

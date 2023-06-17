@@ -5,7 +5,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<link rel="stylesheet" href="community.css">
+<link rel="stylesheet" href="com_list.css">
 </head>
 <body>
 	 <header>
