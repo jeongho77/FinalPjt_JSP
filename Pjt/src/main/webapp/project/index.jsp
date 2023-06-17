@@ -14,8 +14,8 @@
 </head>
 <body>
 <%
-    LoginDao dao = new LoginDao();
-	ArrayList<BoardDto> dtos = dao.list();
+    BoardDao dao = new BoardDao();
+	ArrayList<BoardDto> dtos = dao.Com_list();
 %>
     <header>
         <h1 onclick="moveMain()">Nekarakubae</h1>
@@ -39,6 +39,7 @@
 
     <div class="box-container">
         <div class="box">
+        
             <h2>지식 타이틀</h2>
             <ul>
                 <li>
@@ -54,17 +55,21 @@
         </div>
 
         <div class="box" id="box1">
-            <h2>커뮤니티 타이틀</h2>
-            <ul>
+        <h2>커뮤니티 타이틀</h2>
+        	<ul>
+        <% int count = 0;
+         for (BoardDto dto : dtos){ 
+         	if ( count >= 2) {
+         		break ;
+         	}  
+         %>
                 <li>
-                    <h3>글 제목 1</h3>
-                    <small>작성자: 사용자1 | 작성일: 2023-05-24</small>
+                    <h3><%=dto.getTitle()%></h3>
+                    <small>작성자: <%=dto.getWriter() %> | 작성일: <%= dto.getRegdate() %></small>
                 </li>
-                <li>
-                    <h3>글 제목 2</h3>
-                    <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-                </li>
-                <!-- 필요한 만큼 글 목록을 추가하세요 -->
+            <% count++; 
+         }%>
+        
             </ul>
         </div>
 

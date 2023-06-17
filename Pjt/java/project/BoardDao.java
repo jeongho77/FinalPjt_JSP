@@ -55,7 +55,7 @@ public class BoardDao {
 	//2. 반환 데이터 타입
 	//3. 입력 매개변수
 	public ArrayList<BoardDto> Com_list() { 
-		String sql = "SELECT * FROM com_board";
+		String sql = "SELECT * FROM com_board ORDER BY regdate DESC";
 		ArrayList<BoardDto> dtos = new ArrayList<BoardDto>();
 		try (
 			Connection con = getConnection();

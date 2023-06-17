@@ -18,8 +18,16 @@ public class BoardDto {
 	 private int like;
 	 private Date regdate;
 	 
-	 public BoardDto(String title2, int reply_cnt2, String writer2, String content2, String view_cnt2, int like2, java.sql.Date date) {}
-	   
+	 public BoardDto(String title, int reply_cnt, String writer, String content, String view_cnt, int like, java.sql.Date date) {
+		    this.title = title;
+		    this.reply_cnt = reply_cnt;
+		    this.writer = writer;
+		    this.content = content;
+		    this.view_cnt = Integer.parseInt(view_cnt);
+		    this.like = like;
+		    this.regdate = date;
+		}
+	 
 	 public BoardDto(String title, int reply_cnt, String writer, String content, int view_cnt, int like, Date regdate) {
 		 this.title = title;
 		 this.reply_cnt = reply_cnt;
