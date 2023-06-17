@@ -1,7 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="project.LoginDao"%>
 <%@ page import="project.LoginDto"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,10 +23,10 @@
         response.sendRedirect("index.jsp");
     } else {
         // 로그인 실패 시 알림창을 띄워서 메시지 출력
-        response.setContentType("text/html; charset=UTF-8");
+        response.setContentType("text/html; charset=UTF-8"); // 컨텐츠 타입 설정
         PrintWriter outPrint = response.getWriter();
-        out.println("<script>alert('회원 정보가 없습니다.');</script>");
-        // 로그인 페이지에 머무르도록 리다이렉트하지 않음
+        outPrint.println("<script>alert('회원 정보가 없습니다.'); location.href='login.jsp';</script>");
+        // 로그인 페이지로 리다이렉트
     }
 %>
 </body>
