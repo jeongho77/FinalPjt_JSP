@@ -140,6 +140,7 @@ public class BoardDao {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 		) {
 			pstmt.setInt(1, number);
+			pstmt.executeUpdate();
 			
 		} catch (Exception e) {
 			// TODO: handle exception

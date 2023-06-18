@@ -12,8 +12,6 @@
 	BoardDao dao = new BoardDao();
 	dao.Com_Delete(number);
 	
-	System.out.println("¿Ô´Ï?");
-	
-	//response.sendRedirect("com_list.jsp");
+	response.sendRedirect("com_list.jsp");
 %>
 </html>
