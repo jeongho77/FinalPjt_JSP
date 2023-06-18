@@ -1,7 +1,7 @@
 <%@page import="project.BoardDao"%>
 <%@page import="project.BoardDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,29 +26,33 @@ BoardDto dto = dao.Com_getOne(number);
                 <hr>
                 <div class="main-info">
                     <p class="author"><%= dto.getWriter() %></p>
-                    <img src="../images/icon_view.png" alt="¡∂»∏ºˆ">
+                    <img src="../images/icon_view.png" alt="Ï°∞ÌöåÏàò">
                     <small><%= dto.getView_cnt() %></small>
                     <p class="date"><%= dto.getRegdate()%></p>
                 </div>
                 <div class="content">
                     <p><%= dto.getContent() %></p>
                 </div>
+                <div>
+                    <button class="changeBtn" type="button">ÏàòÏ†ï</button>
+                    <button class="changeBtn" type="button">ÏÇ≠Ï†ú</button>
+                </div>
             </article>
 
             <article class="comments">
-                <h3>¥Ò±€</h3>
+                <h3>ÎåìÍ∏Ä</h3>
                 <div class="comment-form">
-                    <input type="text" placeholder="¥Ò±€¿ª ¿€º∫«ÿ¡÷ººø‰." class="comment-input">
-                    <button type="submit" class="comment-submit">µÓ∑œ</button>
+                    <input type="text" placeholder="ÎåìÍ∏ÄÏùÑ ÏûëÏÑ±Ìï¥Ï£ºÏÑ∏Ïöî." class="comment-input">
+                    <button type="submit" class="comment-submit">Îì±Î°ù</button>
                 </div>
                 <ul class="comment-list">
                     <li>
-                        <p class="comment-author">¥Ò±€ ¿€º∫¿⁄</p>
-                        <p class="comment-content">¥Ò±€ ≥ªøÎ</p>
-                        <p class="comment-date">¿€º∫¿œΩ√</p>
+                        <p class="comment-author">ÎåìÍ∏Ä ÏûëÏÑ±Ïûê</p>
+                        <p class="comment-content">ÎåìÍ∏Ä ÎÇ¥Ïö©</p>
+                        <p class="comment-date">ÏûëÏÑ±ÏùºÏãú</p>
     
                     </li>
-                    <!-- ¥Ÿ∏• ¥Ò±€µÈ -->
+                    <!-- Îã§Î•∏ ÎåìÍ∏ÄÎì§ -->
                 </ul>
             </article>
         </section>

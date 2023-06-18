@@ -145,6 +145,11 @@ hr {
     border: 1px solid #ddd;
 }
 
+.changeBtn {
+    margin-left: 0px;
+    margin-right: 8px;
+}
+
 footer {
     background-image: url(../images/spotlight03.jpg);
     background-repeat: no-repeat;

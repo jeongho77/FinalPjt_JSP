@@ -1,6 +1,5 @@
-<%@page import="project.BoardDto"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="project.BoardDao"%>
+<%@page import="project.*"%>
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
