@@ -31,7 +31,7 @@
                     <td><input type="text" class="form-control" value="<%=dto.getTitle() %>" name="title" maxlength="50" style="width:500px;"></td>
                     </tr>
                     <tr>
-                    <td><textarea class="form-control" value="<%=dto.getContent() %>" name="content" maxlength="2048" style="width: 500px; height: 300px;"></textarea></td>
+                    <td><input type="text" class="form-control" value="<%=dto.getContent() %>" name="content" maxlength="2048" style="width: 500px; height: 300px;"></textarea></td>
                     </tr>
                 </tbody>
             </table>
