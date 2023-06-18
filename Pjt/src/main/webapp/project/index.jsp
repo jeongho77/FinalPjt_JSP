@@ -16,6 +16,7 @@
 <%
     BoardDao dao = new BoardDao();
 	ArrayList<BoardDto> dtos = dao.Com_list();
+	
 %>
     <header>
         <h1 onclick="moveMain()">Nekarakubae</h1>
@@ -25,12 +26,23 @@
             <span onclick="moveQ()" class="w-btn">질문과 답변</span>
         </nav>
         <div>
-            <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
+        <% 
+           if (session.getAttribute("user") == null) {
+           
+         %>
+             <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
                 로그인
             </button>
             <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
                 회원가입
             </button>
+        <%
+        }else{
+        	%><button onclick="moveLogout()" class="w-btn w-btn-indigo" type="button">
+               로그아웃
+            </button>
+		<%   }%>
+        
         </div>
     </header>
     <div class="postcontainer" >

@@ -25,6 +25,12 @@ public class LoginDto {
 	   this.pwd = pwd;
    }
    
+   public LoginDto(String email, String pwd, String nickname) {
+	   this.email = email;
+	   this.pwd = pwd;
+	   this.nickname = nickname;
+   }
+   
    public String getEmail() {
       return email;
    }

@@ -89,7 +89,11 @@ public class LoginDao {
 				ResultSet rs = pstmt.executeQuery();
 				
 				if(rs.next()) {
-					dto = new LoginDto(email, pwd);
+					String email2 = rs.getString("email");
+		            String pwd2 = rs.getString("pwd");
+		            String nickname = rs.getString("nickname");
+		            
+					dto = new LoginDto(email2, pwd2, nickname);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
