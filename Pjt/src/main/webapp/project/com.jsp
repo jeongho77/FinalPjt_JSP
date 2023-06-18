@@ -35,7 +35,7 @@ BoardDto dto = dao.Com_getOne(number);
                 </div>
                 <div>
                     <button class="changeBtn" type="button" onclick="location.href='com_update.jsp?number=<%=dto.getNumber()%>'">수정</button>
-                    <button class="changeBtn" type="button">삭제</button>
+                    <button class="changeBtn" type="button" onclick="location.href='com_delete.jsp?number=<%=dto.getNumber()%>'">삭제</button>
                 </div>
             </article>
 

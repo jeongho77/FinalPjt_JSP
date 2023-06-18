@@ -16,7 +16,7 @@
 	BoardDto dto = dao.Com_getOne(number);
 %>
 	<div>
-        <form action="com_write_ok.jsp" method="get">
+        <form action="com_update_ok.jsp" method="get">
             <table class="table1" style="text-align:center; border: 1px solid #dddddd">
                 <thead>
                     <tr>
@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                 	<tr>
-                    <td><input type="text" class="form-control" value="<%=number %>" name="title" maxlength="50" style="width:500px;"></td>
+                    <td><input type="text" class="form-control" value="<%=dto.getNumber() %>" name="number" maxlength="50" style="width:500px;"></td>
                     </tr>
                     <tr>
                     <td><input type="text" class="form-control" value="<%=dto.getTitle() %>" name="title" maxlength="50" style="width:500px;"></td>

@@ -132,14 +132,14 @@ public class BoardDao {
 		return dto;
 	}
 	
-	public void Com_Delete(int bcode) {
-		String sql = "DELETE from board where number = ?";
-		
+	public void Com_Delete(int number) {
+		String sql = "DELETE from com_board where number = ?";
+		System.out.println("안녕");
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 		) {
-			pstmt.setInt(1, bcode);
+			pstmt.setInt(1, number);
 			
 		} catch (Exception e) {
 			// TODO: handle exception

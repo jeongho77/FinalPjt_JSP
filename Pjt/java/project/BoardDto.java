@@ -45,6 +45,13 @@ public class BoardDto {
 		 this.title = title;
 		 this.content = content;
 	 }
+	 
+	 //게시판 글 수정
+	 public BoardDto(int number, String title, String content) {
+		 this.number = number;
+		 this.title = title;
+		 this.content = content;
+	 }
 
 	/**
 	 * @return the title
