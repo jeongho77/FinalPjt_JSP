@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="index.css">
     <script type="text/javascript" src="index.js"></script>
     <title>Nekarakubae 커뮤니티</title>
-    
+ 
 </head>
 <body>
 <%
     BoardDao dao = new BoardDao();
-	ArrayList<BoardDto> dtos = dao.Com_list();
-	
+    ArrayList<BoardDto> dtos = dao.Com_list();
+    
 %>
     <header>
         <h1 onclick="moveMain()">Nekarakubae</h1>
@@ -26,7 +26,7 @@
             <span onclick="moveQ()" class="w-btn">질문과 답변</span>
         </nav>
         <div>
-        <% 
+        <%  
            if (session.getAttribute("user") == null) {
            
          %>
@@ -38,10 +38,10 @@
             </button>
         <%
         }else{
-        	%><button onclick="moveLogout()" class="w-btn w-btn-indigo" type="button">
+            %><button onclick="moveLogout()" class="w-btn w-btn-indigo" type="button">
                로그아웃
             </button>
-		<%   }%>
+        <%   }%>
         
         </div>
     </header>
@@ -69,12 +69,12 @@
               
         <div class="box" id="box1">
         <h2>커뮤니티 타이틀</h2>
-        	<ul>
+            <ul>
         <% int count = 0;
          for (BoardDto dto : dtos){ 
-         	if ( count >= 2) {
-         		break ;
-         	}  
+            if ( count >= 2) {
+                break ;
+            }  
          %>  <li>
                     <h3><%=dto.getTitle()%></h3>
                     <small>작성자: <%=dto.getWriter() %> | 작성일: <%= dto.getRegdate() %></small>
@@ -182,3 +182,6 @@
 </body>
 
 </html>
+
+
+
