@@ -11,8 +11,9 @@
 </head>
 <body>
 <%
-    BoardDao dao = new BoardDao();
-	ArrayList<BoardDto> dtos = dao.Com_board();
+	int number = Integer.parseInt(request.getParameter("number"));
+	BoardDao dao = new BoardDao();
+	BoardDto dto = dao.Com_getOne(number);
 %>
 	<div>
         <form action="com_write_ok.jsp" method="get">
@@ -23,15 +24,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <td><input type="text" class="form-control" placeholder=" 글 제목" value="<%= %>" name="title" maxlength="50" style="width:500px;"></td>
+                	<tr>
+                    <td><input type="text" class="form-control" value="<%=number %>" name="title" maxlength="50" style="width:500px;"></td>
                     </tr>
                     <tr>
-                    <td><textarea class="form-control" placeholder="글 내용" name="content" maxlength="2048" style="width: 500px; height: 300px;"></textarea></td>
+                    <td><input type="text" class="form-control" value="<%=dto.getTitle() %>" name="title" maxlength="50" style="width:500px;"></td>
+                    </tr>
+                    <tr>
+                    <td><textarea class="form-control" value="<%=dto.getContent() %>" name="content" maxlength="2048" style="width: 500px; height: 300px;"></textarea></td>
                     </tr>
                 </tbody>
             </table>
-            <input type="submit" class="btnSub" value="글쓰기">
+            <input type="submit" class="btnSub" value="수정하기">
         </form>
     </div>
 </body>
