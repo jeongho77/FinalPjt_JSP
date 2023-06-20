@@ -24,17 +24,21 @@
     // 로그인 성공 시 다른 페이지로 이동
     System.out.println("등록 성공");
 	
-	if (rdoValue.equals("community")) {
-		dao.Com_Insert(dto);	
-		response.sendRedirect("com_list.jsp");
-	} else if (rdoValue.equals("knowledge")) {
-		dao.Know_Insert(dto);
-		response.sendRedirect("com_list.jsp");
-	} else {
-		dao.Qa_Insert(dto);
-		response.sendRedirect("com_list.jsp");
-	}
-    
+    if (rdoValue != null) {
+        if (rdoValue.equals("community")) {
+            dao.Com_Insert(dto);	
+            response.sendRedirect("com_list.jsp");
+        } else if (rdoValue.equals("knowledge")) {
+            dao.Know_Insert(dto);
+            response.sendRedirect("com_list.jsp");
+        } else {
+            dao.Qa_Insert(dto);
+            response.sendRedirect("com_list.jsp");
+        }
+    } else {
+        // rdoValue가 null인 경우에 대한 예외 처리 또는 대체 동작 추가
+        // 예: 오류 메시지 출력 또는 기본값으로 처리
+    }
 %>
 </body>
 </html>
