@@ -48,7 +48,7 @@ public class BoardDao {
 			e.printStackTrace();
 		}
 		return;
-	}
+	} 
 	
 	public void com_view(int i){
 		String sql = "update com_board set `view_cnt` = `view_cnt` + 1 where number = ?";

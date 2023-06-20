@@ -19,7 +19,7 @@
 	
 	System.out.println(title + content + rdoValue);
 	
-	BoardDao dao = new BoardDao();
+	BoardDao dao = new BoardDao();   
 	BoardDto dto = new BoardDto(title, content, writer);
 	
 	

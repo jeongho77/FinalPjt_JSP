@@ -45,7 +45,7 @@ public class BoardDto {
 		 this.title = title;
 		 this.content = content;
 		 this.writer = writer;
-	 }
+	 } 
 	 
 	 //게시판 글 수정
 	 public BoardDto(int number, String title, String content) {
