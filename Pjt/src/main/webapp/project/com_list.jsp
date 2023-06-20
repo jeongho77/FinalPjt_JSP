@@ -52,7 +52,7 @@
     <div class="container">
         <section class="post-list">
             <article class="post">
-                <h2 class="post-title"> <a href = "com.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></h2>
+                <h2 class="post-title"> <a href = "/Pjt/project/board_page/community_page.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></h2>
                 <div class="post-meta">
                     <div id="left">
                         <p>ÀÛ¼ºÀÚ : <%=dto.getWriter() %></p>
