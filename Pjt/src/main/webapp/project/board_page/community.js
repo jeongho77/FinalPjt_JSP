@@ -14,6 +14,10 @@ function moveQ() {
     location.href = "qna.html"
 }
 
+function moveCommunity() {
+    location.href = "community.jsp"
+}
+
 function moveCommunityPage() {
     location.href = "community_page.html"
 }
@@ -31,5 +35,5 @@ function moveSignup() {
 }
 
 function moveWrite() {
-    location.href = "write.html"
+    location.href = "write.jsp"
 }

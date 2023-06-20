@@ -14,8 +14,8 @@ function moveQ() {
     location.href = "board_page/qna.html"
 }
 
-function moveCommyPage() {
-    location.href = "board_page/community_page.html"
+function moveCommunity() {
+    location.href = "board_page/community.jsp"
 }
 
 function moveLogin() {
