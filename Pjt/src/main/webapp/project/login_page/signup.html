@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="signup.css">
+  <script type="text/javascript" src="login.js"></script>
+</head>
+<body>
+    <header>
+        <img src="../images/title.png" onclick="moveMain()" alt="타이틀">
+        <nav>
+            <span onclick="moveCommunity()" class="w-btn">커뮤니티</span>
+            <span onclick="moveKnowledge()" class="w-btn">지식</span>
+            <span onclick="moveQ()" class="w-btn">질문과 답변</span>
+        </nav>
+        <div>
+            <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
+                로그인
+            </button>
+            <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
+                회원가입
+            </button>
+        </div>
+    </header>
+
+    <div class="signup-container">
+        <h2>회원가입</h2>
+        <form action="../index.html" method="post">
+            <input type="text" placeholder="이름" required>
+            <input type="email" placeholder="이메일" required>
+            <input type="password" placeholder="비밀번호" required>
+            <input type="password" placeholder="비밀번호 재입력" required>
+            <input type="text" placeholder="닉네임" required>
+            <button type="submit">가입하기</button>
+        </form>
+        <p onclick="moveLogin()">이미 계정이 있으신가요? <a href="#">로그인</a></p>
+    </div>
+
+    <footer>
+        <p>Nekarakubae &copy; 2023. All rights reserved.</p>
+    </footer>
+</body>
+</html>
