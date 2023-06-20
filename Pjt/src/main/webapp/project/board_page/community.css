@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'neon';
+    src: url('../font/JalnanOTF.otf') format('opentype');
+}
+/* 전체 스타일 */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 100px;
+}
+
+ /* Header 스타일 */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    color: #000;
+    padding: 8px;
+    position: fixed;
+    top: 0;
+    /* width: 100% */
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    width: 300px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+nav {
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+nav span {
+    margin-right: 5px;
+}
+
+ /* 로그인 버튼 */
+button {
+    margin: 20px;
+}
+.write {
+    text-align: center;
+    margin: 10px;
+}
+.w-btn {
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.w-btn-outline {
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+ .w-btn-indigo {
+    background-color: aliceblue;
+    color: #1e6b7b;
+}
+
+.w-btn-indigo-outline {
+    border: 3px solid aliceblue;
+    color: #1e6b7b;
+}
+
+.w-btn-indigo-outline:hover {
+    color: #1e6b7b;
+    background: aliceblue;
+}
+.w-btn:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.w-btn-outline:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.w-btn:active {
+    transform: scale(1.5);
+}
+
+.w-btn-outline:active {
+    transform: scale(1.5);
+}
+
+.center {
+    margin: 0 auto;
+    display: block;
+}
+
+.postcontainer {
+    width: 100%;
+}
+ /* Footer 스타일 */
+ footer {
+    background-color: #FE9E72;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+
+.page-title {
+    font-family: 'neon';
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.page-title h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.page-title small {
+    font-size: 14px;
+    color: #888;
+}
+
+/* DB 내용 가져오기 */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* 게시판 리스트 스타일 */
+.post-list {
+    margin: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.post {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 20px;
+    
+    transition: background-color 0.3s ease;
+}
+
+.post:hover {
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.post-title {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-content {
+    color: #666;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-meta {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.post div #left {
+    display: flex;
+    width: 85%;
+}
+.post div p {
+    margin-left: 10px;
+}
+.post div #right {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post div #right img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.post div #right small {
+    font-size: 12px;
+    margin-right: 10px;
+}
