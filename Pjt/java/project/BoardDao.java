@@ -33,6 +33,40 @@ public class BoardDao {
 		return con;
 	}
 	
+	public void com_like(int i){
+		String sql = "update com_board set `like` = `like` + 1 where number = ?";
+		
+		try (
+			Connection con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+		) {
+			pstmt.setInt(1, i);
+			pstmt.executeQuery();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return;
+	}
+	
+	public void com_view(int i){
+		String sql = "update com_board set `view_cnt` = `view_cnt` + 1 where number = ?";
+		
+		try (
+			Connection con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+		) {
+			pstmt.setInt(1, i);
+			pstmt.executeQuery();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return;
+	}
+	
 	public void Com_Insert(BoardDto dto) {
 		String sql = "INSERT INTO com_board(title, content) VALUES(?, ?)";
 		

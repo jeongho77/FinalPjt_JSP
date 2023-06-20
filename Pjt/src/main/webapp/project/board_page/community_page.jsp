@@ -24,7 +24,10 @@
 	BoardDto dto = dao.Com_getOne(number);
 	ReplyDao dao2 = new ReplyDao();
 	ArrayList<ReplyDto> replyList = dao2.Reply_list();
+	dao.com_view(number);
+	
 	%>
+	
 	<header>
 		<img src="../images/title.png" onclick="moveMain()" alt="타이틀">
 		<nav>
@@ -70,7 +73,7 @@
 				<hr>
 				<div class="main-info">
 					<p class="author"><%=dto.getWriter()%></p>
-					<img src="../images/icon_view.png" alt="<%=dto.getView_cnt()%>">
+					<img src="../images/icon_view.png"> <p><%=dto.getView_cnt()%></p>
 					<p class="date"><%=dto.getRegdate()%></p>
 				</div>
 				<div class="content">
@@ -78,8 +81,8 @@
 				</div>
 			</article>
 			<div class="like-button">
-				<button class="w-btn" type="button">좋아요!</button>
-				<p>10</p>
+				<button class="w-btn" type="button" onclick = "location.href='community_like.jsp?number=<%=dto.getNumber()%>'">좋아요!</button>
+				<p><%=dto.getLike() %></p>
 			</div>
 			<article class="comments">
 				<form action="community_reply.jsp">
@@ -94,11 +97,7 @@
 				</div>	
 					<%
 					} else {
-					%>
-					<script>
-						alert("로그인 후 댓글을 작성할 수 있습니다.");
-					</script>
-					<%
+					//alert 사용해서 댓글 등록시 회원이 아니면 등록이 안되게끔 알려줘야함.
 					}
 					%>
 				</form>
