@@ -27,7 +27,7 @@
     if (rdoValue != null) {
         if (rdoValue.equals("community")) {
             dao.Com_Insert(dto);	
-            response.sendRedirect("com_list.jsp");
+            response.sendRedirect("board_page/community.jsp");
         } else if (rdoValue.equals("knowledge")) {
             dao.Know_Insert(dto);
             response.sendRedirect("com_list.jsp");
