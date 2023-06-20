@@ -35,7 +35,7 @@ BoardDto dto = dao.Com_getOne(number);
                     <p><%= dto.getContent() %></p>
                 </div>
                 <div>
-                 <%if(dto.getContent() == session.getAttribute("user")){
+                 <%if(dto.getWriter().equals(session.getAttribute("user"))){
                 	 %>
                  
                     <button class="changeBtn" type="button" onclick="location.href='com_update.jsp?number=<%=dto.getNumber()%>'">수정</button>
