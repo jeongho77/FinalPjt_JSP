@@ -27,23 +27,30 @@
 				onclick="moveKnowledge()" class="w-btn">지식</span> <span
 				onclick="moveQ()" class="w-btn">질문과 답변</span>
 		</nav>
-		<div>
-			<%
+		<%
 			if (session.getAttribute("user") == null) {
-			%>
+		%>
+		<div>
 			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
 				type="button">로그인</button>
 			<button onclick="moveSignup()" class="w-btn w-btn-indigo"
 				type="button">회원가입</button>
-			<%
-			} else {
-			%><button onclick="moveLogout()" class="w-btn w-btn-indigo"
-				type="button">로그아웃</button>
-			<%
-			}
-			%>
 		</div>
-
+		<%
+			} else {
+		%>
+		<div class="login-success">
+            <p>환영합니다. <%= session.getAttribute("user") %>님</p>
+            <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
+                회원정보수정
+            </button>
+            <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
+                로그아웃
+            </button>
+        </div> 
+		<%
+			}
+		%>
 	</header>
 	<div class="postcontainer">
 		<video src="video/welcome.mp4" poster="images/notfound.png" loop=""

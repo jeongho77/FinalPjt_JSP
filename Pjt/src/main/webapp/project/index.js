@@ -19,11 +19,11 @@ function moveCommyPage() {
 }
 
 function moveLogin() {
-    location.href = "login_page/login.html"
+    location.href = "login_page/login.jsp"
 }
 
-function moveLogin() {
-    location.href = "login_page/login.html"
+function moveLogout() {
+    location.href = "login_page/logout.jsp"
 }
 
 function moveSignup() {

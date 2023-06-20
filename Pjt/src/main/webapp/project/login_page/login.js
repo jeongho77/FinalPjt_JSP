@@ -13,9 +13,9 @@ function moveKnowledge() {
 function moveQ() {
     location.href = "../board_page/qna.html"
 }
-;
+
 function moveLogin() {
-    location.href = "../login_page/login.html"
+    location.href = "login_page/login.jsp"
 }
 
 function moveSignup() {
