@@ -83,10 +83,9 @@
 			</div>
 			<article class="comments">
 				<form action="community_reply.jsp">
-					<input type="text" placeholder="댓글을 작성해주세요." name="content"
-						class="comment-input"> <input type="hidden" name="number"
-						value="<%=dto.getNumber()%>"> <input type="hidden"
-						name="writer" value="<%=session.getAttribute("user")%>">
+					<input type="text" placeholder="댓글을 작성해주세요." name="content" class="comment-input"> 
+					<input type="hidden" name="number" value="<%=dto.getNumber()%>">
+					<input type="hidden" name="writer" value="<%=session.getAttribute("user")%>">
 					<%
 					if (session != null) {
 					%>
@@ -97,7 +96,6 @@
 					<script>
 						alert("로그인 후 댓글을 작성할 수 있습니다.");
 					</script>
-					<p>로그인 후 댓글을 작성할 수 있습니다.</p>
 					<%
 					}
 					%>
