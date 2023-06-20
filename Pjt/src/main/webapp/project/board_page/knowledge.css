@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'neon';
-    src: url('font/JalnanOTF.otf') format('opentype');
+    src: url('../font/JalnanOTF.otf') format('opentype');
 }
-
 /* 전체 스타일 */
 html {
     scroll-behavior: smooth;
@@ -15,7 +14,7 @@ body {
     padding-top: 100px;
 }
 
-/* Header 스타일 */
+ /* Header 스타일 */
 header {
     background-color: #fff;
     border-bottom: 1px solid rgb(204, 204, 204);
@@ -46,13 +45,15 @@ nav span {
     margin-right: 5px;
 }
 
-/* 로그인 버튼 */
+ /* 로그인 버튼 */
 button {
     margin: 20px;
 }
-
+.write {
+    text-align: center;
+    margin: 10px;
+}
 .w-btn {
-    position: relative;
     border: none;
     display: inline-block;
     padding: 15px 30px;
@@ -64,7 +65,6 @@ button {
 }
 
 .w-btn-outline {
-    position: relative;
     padding: 15px 30px;
     border-radius: 15px;
     font-family: "paybooc-Light", sans-serif;
@@ -73,8 +73,7 @@ button {
     font-weight: 600;
     transition: 0.25s;
 }
-
-.w-btn-indigo {
+ .w-btn-indigo {
     background-color: aliceblue;
     color: #1e6b7b;
 }
@@ -88,7 +87,6 @@ button {
     color: #1e6b7b;
     background: aliceblue;
 }
-
 .w-btn:hover {
     letter-spacing: 2px;
     transform: scale(1.2);
@@ -109,43 +107,16 @@ button {
     transform: scale(1.5);
 }
 
-.login-success {
-    display: flex;
-    align-items: center;
+.center {
+    margin: 0 auto;
+    display: block;
 }
 
 .postcontainer {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.231),
-            rgba(0, 0, 0, 0.8)), url("images/background.jpg");
-    background-size: cover;
-    object-fit: contain;
-    text-align: center;
-    display: flex;
+    width: 100%;
 }
-
-.postcontainer video {
-    margin: 50px;
-    max-width: 50%;
-    border-radius: 40px 200px 200px 40px;
-}
-
-.postcontainer div {
-    margin: 50px;
-    font-family: 'neon';
-    align-items: center;
-    font-size: 3em;
-}
-
-.postcontainer h3 {
-    color: #fff;
-}
-
-.postcontainer h1 {
-    color: #FE9E72;
-}
-
-/* Footer 스타일 */
-footer {
+ /* Footer 스타일 */
+ footer {
     background-color: #FE9E72;
     color: #fff;
     padding: 15px;
@@ -154,93 +125,96 @@ footer {
     position: absolute;
 }
 
-/* 스타일링을 위한 CSS 코드를 여기에 작성하세요 */
-.box-container {
-    margin-left: 200px;
-    margin-right: 200px;
+.page-title {
+    font-family: 'neon';
+    text-align: center;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
+}
+
+.page-title h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.page-title small {
+    font-size: 14px;
+    color: #888;
+}
+
+/* DB 내용 가져오기 */
+.container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
-.box {
-    width: 45%;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 20px;
-    border: 2px solid #FE9E72;
-    background-color: #fff;
+/* 게시판 리스트 스타일 */
+.post-list {
+    margin: 20px;
+    max-width: 800px;
+    width: 100%;
 }
 
-.box h2 {
-    font-family: 'neon';
-    padding: 15px;
-    background-color: #FE9E72;
-    width: fit-content;
+.post {
+    border: 1px solid #ddd;
     border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 20px;
+    
+    transition: background-color 0.3s ease;
 }
 
-.box ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.box li {
-    display: flex;
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
-    transition: background-color 0.3s;
-}
-
-.box li:first-child {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-.box li:last-child {
-    border-bottom: none;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.box li:hover {
-    background-color: #e9e9e9;
+.post:hover {
+    background-color: #f7f7f7;
     cursor: pointer;
 }
 
-.box li h3 {
-    padding-left: 10px;
-    max-width: 200px;
+.post-title {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
-.box li small {
+.post-content {
+    color: #666;
     margin-left: 10px;
-    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.box li #left {
+.post-meta {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.post div #left {
+    display: flex;
     width: 85%;
 }
-
-.box li #right {
+.post div p {
+    margin-left: 10px;
+}
+.post div #right {
     width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.box li #right img {
+.post div #right img {
     width: 20px;
     height: 20px;
     margin-right: 5px;
 }
 
-.box li #right small {
+.post div #right small {
     font-size: 12px;
     margin-right: 10px;
 }
