@@ -70,7 +70,8 @@
         <div class="box" id="box1">
         <h2>커뮤니티 타이틀</h2>
             <ul>
-        <% int count = 0;
+        <% 
+        int count = 0;
          for (BoardDto dto : dtos){ 
             if ( count >= 2) {
                 break ;
