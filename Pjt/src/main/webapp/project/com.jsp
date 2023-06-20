@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="com.css">
+<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
 <% 
@@ -34,8 +35,14 @@ BoardDto dto = dao.Com_getOne(number);
                     <p><%= dto.getContent() %></p>
                 </div>
                 <div>
+                 <%if(dto.getContent() == session.getAttribute("user")){
+                	 %>
+                 
                     <button class="changeBtn" type="button" onclick="location.href='com_update.jsp?number=<%=dto.getNumber()%>'">수정</button>
                     <button class="changeBtn" type="button" onclick="location.href='com_delete.jsp?number=<%=dto.getNumber()%>'">삭제</button>
+                    <%
+                    }
+                    %>
                 </div>
             </article>
 

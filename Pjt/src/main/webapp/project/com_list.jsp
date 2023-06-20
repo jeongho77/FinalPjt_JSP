@@ -8,11 +8,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="com_list.css">
+<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
 <%
     BoardDao dao = new BoardDao();
 	ArrayList<BoardDto> dtos = dao.Com_list();
+	
 %>
 	 <header>
         <h1 onclick="moveMain()">Nekarakubae</h1>

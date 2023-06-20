@@ -14,7 +14,7 @@
     request.setCharacterEncoding("UTF-8");
     String email = request.getParameter("email");
     String pwd = request.getParameter("pwd");
-
+	
     LoginDao dao = new LoginDao();
     LoginDto dto = dao.login(email, pwd);
        
@@ -22,8 +22,9 @@
     if (dto != null) {
         // 로그인 성공 시 세션 넘겨준후 index로 감
         session.setAttribute("user", dto.getNickname());
-        response.sendRedirect("index.jsp");
-        
+        String previousPage = (String) session.getAttribute("previousPage");
+        response.sendRedirect(previousPage);
+       
     } else {
         // 로그인 실패 시 알림창을 띄워서 메시지 출력
         response.setContentType("text/html; charset=UTF-8"); // 컨텐츠 타입 설정

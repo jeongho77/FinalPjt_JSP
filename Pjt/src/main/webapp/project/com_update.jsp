@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript" src="index.js"></script>
 <body>
 <%
 	int number = Integer.parseInt(request.getParameter("number"));

@@ -5,8 +5,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="login.css">
+<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
+	<% 
+    String previousPage = request.getHeader("referer");
+    session.setAttribute("previousPage", previousPage);
+    %>   
+    
 	<header>
     <h1 onclick="moveMain()">Nekarakubae</h1>
     <nav>
@@ -15,22 +21,12 @@
         <span onclick="moveQ()" class="w-btn">질문과 답변</span>
     </nav>
     <div>
-        <%  
-           if (session.getAttribute("user") == null) {
-           
-         %>
-             <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
-                로그인
-            </button>
-            <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
-                회원가입
-            </button>
-        <%
-        }else{
-            %><button onclick="moveLogout()" class="w-btn w-btn-indigo" type="button">
-               로그아웃
-            </button>
-        <%   }%>
+        <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
+            로그인
+        </button>
+        <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
+            회원가입
+        </button>
     </div>
     </header>
   <div class="login-container">
@@ -38,6 +34,7 @@
     <form action = "login_ok.jsp" method = "get">
       <input type="text" placeholder="아이디" required name="email">
       <input type="password" placeholder="비밀번호" required name="pwd">
+      <input type="hidden" name="previousPage" value="<%= previousPage %>">
       <button type="submit">로그인</button>
     </form>
     <p onclick="moveSignup()">계정이 없으신가요? <a href="#">회원가입</a></p>
