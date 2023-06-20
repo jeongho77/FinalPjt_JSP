@@ -1,6 +1,6 @@
 //네비게이션 버튼 클릭시 화면 이동
 function moveMain() {
-    location.href = "index.html"
+    location.href = "index.jsp"
 }
 function moveCommunity() {
     location.href = "board_page/community.html"
