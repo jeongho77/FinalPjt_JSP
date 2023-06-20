@@ -53,7 +53,7 @@
 			<div class="page-title">
 				<h2>글 작성하기</h2>
 			</div>
-			<form action="../com_write_ok.jsp" method="get">
+			<form action="com_write_ok.jsp" method="get">
 				<div class="input-group">
 					<label for="title">제목</label> <input type="text" id="title"
 						name="title" placeholder="제목을 입력하세요.">

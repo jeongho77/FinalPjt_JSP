@@ -68,7 +68,7 @@ public class BoardDao {
 	}
 	
 	public void Com_Insert(BoardDto dto) {
-		String sql = "INSERT INTO com_board(title, content) VALUES(?, ?)";
+		String sql = "INSERT INTO com_board(title, content,writer) VALUES(?, ?,?)";
 		
 		try (
 			Connection con = getConnection();
@@ -76,6 +76,7 @@ public class BoardDao {
 		){	
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getContent());
+			pstmt.setString(3, dto.getWriter());
 			pstmt.executeUpdate();
 			
 		} catch (Exception e) {
@@ -85,7 +86,7 @@ public class BoardDao {
 	}
 	
 	public void Know_Insert(BoardDto dto) {
-		String sql = "INSERT INTO knowledge_board(title, content) VALUES(?, ?)";
+		String sql = "INSERT INTO knowledge_board(title, content,writer) VALUES(?, ?,?)";
 		
 		try (
 			Connection con = getConnection();
@@ -93,6 +94,7 @@ public class BoardDao {
 		){	
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getContent());
+			pstmt.setString(3, dto.getWriter());
 			pstmt.executeUpdate();
 			
 		} catch (Exception e) {
@@ -102,7 +104,7 @@ public class BoardDao {
 	}
 	
 	public void Qa_Insert(BoardDto dto) {
-		String sql = "INSERT INTO qa_board(title, content) VALUES(?, ?)";
+		String sql = "INSERT INTO qa_board(title, content,writer) VALUES(?, ?,?)";
 		
 		try (
 			Connection con = getConnection();
@@ -110,6 +112,7 @@ public class BoardDao {
 		){	
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getContent());
+			pstmt.setString(3, dto.getWriter());
 			pstmt.executeUpdate();
 			
 		} catch (Exception e) {
