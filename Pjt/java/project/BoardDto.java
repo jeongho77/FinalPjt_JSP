@@ -41,9 +41,10 @@ public class BoardDto {
 	 }
 	 
 	 //게시판 글 작성 
-	 public BoardDto(String title, String content) {
+	 public BoardDto(String title, String content, String writer) {
 		 this.title = title;
 		 this.content = content;
+		 this.writer = writer;
 	 }
 	 
 	 //게시판 글 수정
