@@ -25,7 +25,7 @@
             <span onclick="moveQ()" class="w-btn">질문과 답변</span>
         </nav>
         <div>
-            <%  
+          <%  
            if (session.getAttribute("user") == null) {
            
          %>

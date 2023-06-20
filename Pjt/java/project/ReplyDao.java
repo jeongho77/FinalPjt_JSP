@@ -24,7 +24,7 @@ public class ReplyDao {
 		return con;
 	}
 	
-	public void Com_Insert(ReplyDto dto) {
+	public void Reply_Insert(ReplyDto dto) {
 		String sql = "INSERT INTO com_reply(board_num ,writer, content) VALUES(?, ?, ?)";
 		
 		try (
@@ -46,25 +46,22 @@ public class ReplyDao {
 	//1. 접근제어자
 	//2. 반환 데이터 타입
 	//3. 입력 매개변수
-	public ArrayList<BoardDto> Com_list() { 
-		String sql = "SELECT * FROM com_board ORDER BY regdate DESC";
-		ArrayList<BoardDto> dtos = new ArrayList<BoardDto>();
+	public ArrayList<ReplyDto> Reply_list() { 
+		String sql = "SELECT * FROM com_reply ORDER BY regdate DESC";
+		ArrayList<ReplyDto> dtos = new ArrayList<ReplyDto>();
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 		) {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
-				int number = rs.getInt("number");
-				String title = rs.getString("title");
-				int reply_cnt = rs.getInt("reply_cnt");
+				int board_num = rs.getInt("board_num");
 				String writer = rs.getString("writer");
-				String content = rs.getString("CONTENT");
-				String view_cnt = rs.getString("view_cnt");
+				String content = rs.getString("content");
 				int like = rs.getInt("like");
-				Date date = rs.getDate("REGDATE");
+				Date date = rs.getDate("regdate");
 				
-				BoardDto dto = new BoardDto(number, title, reply_cnt, writer, content, view_cnt , like, date);
+				ReplyDto dto = new ReplyDto(board_num, writer, content, like, date);
 				dtos.add(dto);
 			}
 		} catch (Exception e) {

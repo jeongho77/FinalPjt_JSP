@@ -19,11 +19,15 @@ function moveCommunityPage() {
 }
 
 function moveLogin() {
-    location.href = "../login_page/login.html"
+    location.href = "http://localhost:8080/Pjt/project/login.jsp"
+}
+
+function moveLogout(){
+	location.href = "http://localhost:8080/Pjt/project/logout.jsp"
 }
 
 function moveSignup() {
-    location.href = "../login_page/signup.html"
+    location.href = "http://localhost:8080/Pjt/project/signup_ok.jsp"
 }
 
 function moveWrite() {

@@ -6,6 +6,8 @@
 *=====================================*/
 package project;
 
+import java.sql.Date;
+
 /**
  * @author qbnyp
  *
@@ -15,6 +17,8 @@ public class ReplyDto {
 	private int b_num;
 	private String writer;
 	private String content;
+	private int like;
+	private Date date;
 	
 	public ReplyDto(int b_num, String writer, String content) {
 		this.b_num = b_num;
@@ -22,6 +26,13 @@ public class ReplyDto {
 		this.content = content;
 	}
 
+	public ReplyDto(int b_num, String writer, String content, int like, Date date ) {
+		this.b_num = b_num;
+		this.writer = writer;
+		this.content = content;
+		this.like = like;
+		this.date = date;
+	}
 	/**
 	 * @return the b_num
 	 */
@@ -34,6 +45,34 @@ public class ReplyDto {
 	 */
 	public void setB_num(int b_num) {
 		this.b_num = b_num;
+	}
+
+	/**
+	 * @return the like
+	 */
+	public int getLike() {
+		return like;
+	}
+
+	/**
+	 * @param like the like to set
+	 */
+	public void setLike(int like) {
+		this.like = like;
+	}
+
+	/**
+	 * @return the date
+	 */
+	public Date getDate() {
+		return date;
+	}
+
+	/**
+	 * @param date the date to set
+	 */
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	/**
