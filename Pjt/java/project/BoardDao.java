@@ -23,7 +23,7 @@ public class BoardDao {
 	private BoardDto dto;
 
 	// DBCP 연결하기
-	private Connection getConnection() throws Exception{
+	private Connection getConnection() throws Exception{ 
 		InitialContext intCtv = new InitialContext();
 		
 		DataSource ds = (DataSource) intCtv.lookup("java:comp/env/jdbc/mj"); 
