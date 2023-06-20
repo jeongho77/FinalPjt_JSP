@@ -4,7 +4,7 @@ function moveMain() {
 }
 function moveCommunity() {
     location.href = "board_page/community.html"
-}
+}unit
 
 function moveKnowledge() {
     location.href = "board_page/knowledge.html"
@@ -14,7 +14,7 @@ function moveQ() {
     location.href = "board_page/qna.html"
 }
 
-function moveCommunityPage() {
+function moveCommyPage() {
     location.href = "board_page/community_page.html"
 }
 

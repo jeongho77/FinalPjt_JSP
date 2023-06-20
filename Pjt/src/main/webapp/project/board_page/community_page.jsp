@@ -55,10 +55,10 @@
 			<%
 			if (dto.getWriter().equals(session.getAttribute("user"))) {
 			%>
-			<button class="changeBtn" class="w-btn" type="button"
-				onclick="location.href='com_update.jsp?number=<%=dto.getNumber()%>'">수정</button>
-			<button class="changeBtn" class="w-btn" type="button"
-				onclick="location.href='com_delete.jsp?number=<%=dto.getNumber()%>'">삭제</button>
+			<div class="modify-button">
+   				 <button class="changeBtn w-btn" type="button" onclick="location.href='com_update.jsp?number=<%=dto.getNumber()%>'">수정</button>
+    			 <button class="changeBtn w-btn" type="button" onclick="location.href='com_delete.jsp?number=<%=dto.getNumber()%>'">삭제</button>
+			</div>
 			<%
 			}
 			%>
@@ -83,13 +83,15 @@
 			</div>
 			<article class="comments">
 				<form action="community_reply.jsp">
+				<div class="comment-form">
 					<input type="text" placeholder="댓글을 작성해주세요." name="content" class="comment-input"> 
-					<input type="hidden" name="number" value="<%=dto.getNumber()%>">
+					<input type="hidden" name="number" value="<%=dto.getNumber()%>"> 
 					<input type="hidden" name="writer" value="<%=session.getAttribute("user")%>">
 					<%
 					if (session != null) {
 					%>
 					<button type="submit" class="comment-submit">등록</button>
+				</div>	
 					<%
 					} else {
 					%>
@@ -100,23 +102,21 @@
 					}
 					%>
 				</form>
-				</div>
-
-
-				<ul class="comment-list">
-					<%
-					for (ReplyDto reply : replyList) {
-					%>
-					<li>
-						<p class="comment-author"><%=reply.getWriter()%></p>
-						<p class="comment-content"><%=reply.getContent()%></p>
-						<p class="comment-date"><%=reply.getDate()%></p>
-					</li>
-					<%
-					}
-					%>
-				</ul>
 			</article>
+			
+			<ul class="comment-list">
+				<%
+				for (ReplyDto reply : replyList) {
+				%>
+				<li>
+					<p class="comment-author"><%=reply.getWriter()%></p>
+					<p class="comment-content"><%=reply.getContent()%></p>
+					<p class="comment-date"><%=reply.getDate()%></p>
+				</li>
+				<%
+				}
+				%>
+			</ul>
 		</section>
 	</main>
 </body>
