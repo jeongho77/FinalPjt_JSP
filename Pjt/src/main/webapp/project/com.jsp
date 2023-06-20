@@ -13,7 +13,7 @@
 <body>
 <% 
 int number = Integer.parseInt(request.getParameter("number"));
-
+String s = (String)session.getAttribute("user");
 BoardDao dao = new BoardDao();
 BoardDto dto = dao.Com_getOne(number);
 %>
@@ -37,7 +37,6 @@ BoardDto dto = dao.Com_getOne(number);
                 <div>
                  <%if(dto.getWriter().equals(session.getAttribute("user"))){
                 	 %>
-                 
                     <button class="changeBtn" type="button" onclick="location.href='com_update.jsp?number=<%=dto.getNumber()%>'">수정</button>
                     <button class="changeBtn" type="button" onclick="location.href='com_delete.jsp?number=<%=dto.getNumber()%>'">삭제</button>
                     <%
@@ -49,8 +48,11 @@ BoardDto dto = dao.Com_getOne(number);
             <article class="comments">
                 <h3>댓글</h3>
                 <div class="comment-form">
-                    <input type="text" placeholder="댓글을 작성해주세요." class="comment-input">
-                    <button type="submit" class="comment-submit">등록</button>
+                	<form action = "com_reply.jsp">
+                    	<input type="text" placeholder="댓글을 작성해주세요." name="reply" class="form-control">
+                    	<input type="hidden" >
+                    	<button type="submit" class="comment-submit">등록</button>
+                    </form>
                 </div>
                 <ul class="comment-list">
                     <li>

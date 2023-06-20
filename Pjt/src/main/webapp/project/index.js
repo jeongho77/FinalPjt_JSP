@@ -14,3 +14,7 @@ function moveLogout() {
     
    window.location.href = "logout.jsp";
   }
+  
+ function moveMain() {
+	 window.location.href = "index.jsp";
+ }
