@@ -99,15 +99,13 @@
 							value="<%=dto.getNumber()%>"> <input type="hidden"
 							name="writer" value="<%=session.getAttribute("user")%>">
 						<%
-						if (session.getAttribute("user") == null) {
+						if (session.getAttribute("user") != null) {
 						%>
 						<button type="submit" class="comment-submit">등록</button>
 						<%
-						} else {
-						out.print("<script>alert('회원 정보가 없습니다.'); window.location.href='Login.jsp';</script>");
 						}
 						%>
-					
+					</div>
 				</form>
 			</article>
 

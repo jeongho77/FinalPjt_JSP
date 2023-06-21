@@ -101,7 +101,7 @@
 					}
 				%>
 				<li>
-					<div onclick="moveCommunityPage()" id="left">
+					<div onclick="http://localhost:8080/Pjt/project/board_page/community_page.jsp?number=<%=dto.getNumber()%>" id="left">
 						<h3><%=dto.getTitle()%></h3>
 						<small>작성자: <%=dto.getWriter()%></small> <small> | </small> <small>작성일:
 							<%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
@@ -120,26 +120,8 @@
 		<div class="box" id="box2">
             <h2>지식</h2>
             <ul>
-                <li>
-                    <h3>글 제목 1</h3>
-                    <small>작성자: 사용자1 | 작성일: 2023-05-24</small>
-                </li>
-                <li>
-                    <h3>글 제목 2</h3>
-                    <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-                </li>
-                <li>
-                    <h3>글 제목 3</h3>
-                    <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-                </li>
-                <li>
-                    <h3>글 제목 4</h3>
-                    <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-                </li>
-                <li>
-                    <h3>글 제목 5</h3>
-                    <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-                </li>
+					
+					
             </ul>
         </div>
 		<div class="box" id="box3">
