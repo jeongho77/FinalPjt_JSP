@@ -20,7 +20,7 @@
     <header>
         <img src="../images/title.png" onclick="moveMain()" alt="타이틀">
         <nav>
-            <span onclick="moveCommunity()" class="w-btn">커뮤니티</span>
+            <span onclick="location.href='<%=request.getContextPath()%>/project/board_page/community.jsp'" class="w-btn">커뮤니티</span>
             <span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>
 			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'" class="w-btn">질문과 답변</span>
         </nav>
@@ -29,10 +29,10 @@
            if (session.getAttribute("user") == null) {
            
          %>
-             <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
+             <button onclick="location.href='<%=request.getContextPath()%>/project/login.jsp'" class="w-btn w-btn-indigo" type="button">
                 로그인
             </button>
-            <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
+            <button onclick="location.href='<%=request.getContextPath()%>/project/signup.jsp'" class="w-btn w-btn-indigo" type="button">
                 회원가입
             </button>
         <%
@@ -56,15 +56,7 @@
     <div class="container">
         <section class="post-list">
             <article class="post">
-               <%
-				if (session.getAttribute("user") == null) {
-				%>
-					<h2 class="post-title" onclick="showAlert()"><%=dto.getTitle() %></h2>
-				<% 
-				} else {
-					%>
-					<h2 class="post-title"> <a href = "community_page.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></a> </h2>
-				<%} %>
+              	<h2 class="post-title"> <a href = "knowledge_page.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></a> </h2>
                 <div class="post-meta">
                     <div id="left">
                          <p>작성자 : <%=dto.getWriter() %></p>
