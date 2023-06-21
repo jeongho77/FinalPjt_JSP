@@ -44,7 +44,7 @@
 				환영합니다.
 				<%=session.getAttribute("user")%>님
 			</p>
-			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
+			<button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
 				type="button">회원정보수정</button>
 			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
 				type="button">로그아웃</button>
@@ -189,8 +189,8 @@ function goToKnowPage(number) {
 							<%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
 					</div>
 					<div id="right">
-						<img src="images/icon_chat.png" alt="댓글"> <small>10</small>
-						<img src="images/icon_heart.png" alt="좋아요"> <small>20</small>
+						<img src="images/icon_chat.png" alt="댓글"> <small><%=dto.getReply_cnt() %></small>
+						<img src="images/icon_heart.png" alt="좋아요"> <small><%=dto.getLike() %></small>
 					</div>
 				</li>
 				<%

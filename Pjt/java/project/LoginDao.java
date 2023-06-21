@@ -128,17 +128,18 @@ public class LoginDao {
 		      return dto;
 		   }
 		
-		public LoginDto Update(String email, String name, String pwd, String nickname) {
-			String sql = "UPDATE user set name=?, pwd=?, nickname=? where email=?";
+		public LoginDto Update(LoginDto Dto) {
+			String sql = "UPDATE user set name=?, pwd=?, nickname=?, email = ? where nickname=?";
 			LoginDto dto = new LoginDto();
 			try(
 				Connection con = getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
 				) {
-					pstmt.setString(1, name);
-					pstmt.setString(2, pwd);
-					pstmt.setString(3, nickname);
-					pstmt.setString(4, email);
+					pstmt.setString(1, dto.getName());
+					pstmt.setString(2, dto.getPwd());
+					pstmt.setString(3, dto.getNickname());
+					pstmt.setString(4, dto.getEmail());
+					pstmt.setString(5, dto.getA());
 				
 					int i = pstmt.executeUpdate();
 				

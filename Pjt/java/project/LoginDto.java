@@ -7,7 +7,7 @@ public class LoginDto {
    private String name;
    private String pwd;
    private String nickname;
-   
+   private String a;
    //기본 생성자
    public LoginDto() {}
    
@@ -18,6 +18,28 @@ public class LoginDto {
       this.pwd = pwd;
       this.nickname = nickname;
    }
+   /**
+ * @return the a
+ */
+public String getA() {
+	return a;
+}
+
+/**
+ * @param a the a to set
+ */
+public void setA(String a) {
+	this.a = a;
+}
+
+public LoginDto(String name, String pwd, String nickname, String email,String a) {
+	      this.name = name;
+	      this.pwd = pwd;
+	      this.nickname = nickname;
+	      this.email = email;
+	      this.a = a;
+	   }
+	   
    
    //로그인 생성자
    public LoginDto(String email, String pwd) {
