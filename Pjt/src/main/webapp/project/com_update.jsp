@@ -60,7 +60,7 @@
 			<form action="com_update_ok.jsp" method="get">
 				<div class="input-group">
 					<p>
-						글 번호<input type="text" name="number" value="<%=dto.getNumber()%>" readOnly>
+						글 번호<input type="text" name="number" value="<%=dto.getNumber()%>" class="WNumber" readOnly>
 					</p>
 				</div>
 				<div class="input-group">

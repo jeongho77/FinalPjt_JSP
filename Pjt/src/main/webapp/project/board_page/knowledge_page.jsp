@@ -85,7 +85,7 @@
 				<p><%=dto.getLike() %></p>
 			</div>
 			<article class="comments">
-				<form action="community_reply.jsp">
+				<form action="knowledge_reply.jsp">
 				<div class="comment-form">
 					<input type="text" placeholder="댓글을 작성해주세요." name="content" class="comment-input"> 
 					<input type="hidden" name="number" value="<%=dto.getNumber()%>"> 
