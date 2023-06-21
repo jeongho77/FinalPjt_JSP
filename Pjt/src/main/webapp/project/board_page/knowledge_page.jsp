@@ -111,6 +111,7 @@
 					<p class="comment-author"><%=reply.getWriter()%></p>
 					<p class="comment-content"><%=reply.getContent()%></p>
 					<p class="comment-date"><%=reply.getDate()%></p>
+					<button id="reply_delete" type="button" onclick="location.href='../knowledge_reply_delete.jsp?number=<%=reply.getNumber()%>'">삭제하기</button>
 				</li>
 				<%
 				}
