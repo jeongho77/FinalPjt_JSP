@@ -2,9 +2,6 @@
 function moveMain() {
     location.href = "index.jsp"
 }
-function moveCommunity() {
-    location.href = "board_page/community.jsp"
-}unit
 
 function moveKnowledge() {
     location.href = "board_page/knowledge.jsp"
@@ -24,8 +21,4 @@ function moveLogin() {
 
 function moveLogout() {
     location.href = "logout.jsp"
-}
-
-function moveSignup() {
-    location.href = "signup.html"
 }

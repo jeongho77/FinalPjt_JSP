@@ -16,7 +16,7 @@
 %>   
 <body>
     <header>
-        <img src="../images/title.png" onclick="moveMain()" alt="타이틀">
+        <img src="images/title.png" onclick="moveMain()" alt="타이틀">
         <nav>
             <span onclick="moveCommunity()" class="w-btn">커뮤니티</span>
             <span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>
@@ -26,7 +26,7 @@
             <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
                 로그인
             </button>
-            <button onclick="moveSignup()" class="w-btn w-btn-indigo" type="button">
+            <button onclick="location.href='signup.jsp'" class="w-btn w-btn-indigo" type="button">
                 회원가입
             </button>
         </div>
@@ -39,7 +39,7 @@
             <input type="hidden" name="previousPage" value="<%= previousPage %>">
             <button type="submit">로그인</button>
         </form>
-        <p onclick="moveSignup()">계정이 없으신가요? <a href="#">회원가입</a></p>
+        <p>계정이 없으신가요? <a href="signup.jsp">회원가입</a></p>
     </div>
 </body>
 
