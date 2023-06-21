@@ -25,7 +25,7 @@
 	dao.insertLogin(dto);
 	
 	//회원가입 성공시 로그인창으로 이동
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("index.jsp");
 %>
 </body>
 </html>
