@@ -30,11 +30,11 @@
     <div class="signup-container">
         <h2>회원가입</h2>
         <form action="signup_ok.jsp" method="post">
-            <input type="text" placeholder="이름" required>
-            <input type="email" placeholder="이메일" required>
-            <input type="password" placeholder="비밀번호" required>
+            <input type="text" name="name" placeholder="이름" required>
+            <input type="email" name="email" placeholder="이메일" required>
+            <input type="password" name="pwd" placeholder="비밀번호" required>
             <input type="password" placeholder="비밀번호 재입력" required>
-            <input type="text" placeholder="닉네임" required>
+            <input type="text" name="nickname" placeholder="닉네임" required>
             <button type="submit">가입하기</button>
         </form>
         <p>이미 계정이 있으신가요? <a onclick="location.href='signup.jsp'">로그인</a></p>

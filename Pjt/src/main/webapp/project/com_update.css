@@ -124,6 +124,10 @@ button {
     margin-bottom: 50px;
 }
 
+.WNumber {
+	margin-top: 10px;
+}
+
 .main-list {
     max-width: 50%;
     width: 100%;
