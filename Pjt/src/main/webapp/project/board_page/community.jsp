@@ -65,11 +65,11 @@
                     </div>
                     <div id="right">
                         <img src="../images/icon_view.png" alt="<%= dto.getView_cnt()%>">
-                        <small>200</small>
+                        <small><%= dto.getView_cnt()%></small>
                         <img src="../images/icon_chat.png" alt="<%= dto.getReply_cnt()%>">
-                        <small>10</small>
+                        <small><%= dto.getReply_cnt()%></small>
                         <img src="../images/icon_heart.png" alt="<%=dto.getLike() %>">
-                        <small>20</small>
+                        <small><%= dto.getLike()%></small>
                     </div>
                 </div>
             </article>

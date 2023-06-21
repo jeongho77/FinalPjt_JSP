@@ -23,7 +23,7 @@
 	BoardDao dao = new BoardDao();
 	BoardDto dto = dao.Qa_getOne(number);
 	ReplyDao dao2 = new ReplyDao();
-	ArrayList<ReplyDto> replyList = dao2.Qa_Reply_list();
+	ArrayList<ReplyDto> replyList = dao2.Qa_Reply_list(number);
 	dao.qa_view(number);
 	
 	%>

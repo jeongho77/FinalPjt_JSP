@@ -88,7 +88,7 @@ public class ReplyDao {
 	//2. 반환 데이터 타입
 	//3. 입력 매개변수
 	public ArrayList<ReplyDto> Reply_list(int num) { 
-		String sql = "SELECT * FROM com_reply where = ? ORDER BY regdate DESC";
+		String sql = "SELECT * FROM com_reply where board_num = ? ORDER BY regdate DESC";
 		
 		ArrayList<ReplyDto> dtos = new ArrayList<ReplyDto>();
 		try (
@@ -117,7 +117,7 @@ public class ReplyDao {
 	}
 	
 	public ArrayList<ReplyDto> Know_Reply_list(int num) { 
-		String sql = "SELECT * FROM knowledge_reply where = ? ORDER BY regdate DESC";
+		String sql = "SELECT * FROM knowledge_reply where board_num = ? ORDER BY regdate DESC";
 		ArrayList<ReplyDto> dtos = new ArrayList<ReplyDto>();
 		try (
 			Connection con = getConnection();
@@ -144,7 +144,7 @@ public class ReplyDao {
 	}
 	
 	public ArrayList<ReplyDto> Qa_Reply_list(int num) { 
-		String sql = "SELECT * FROM qa_reply where = ? ORDER BY regdate DESC";
+		String sql = "SELECT * FROM qa_reply where = board_num ? ORDER BY regdate DESC";
 		ArrayList<ReplyDto> dtos = new ArrayList<ReplyDto>();
 		try (
 			Connection con = getConnection();
