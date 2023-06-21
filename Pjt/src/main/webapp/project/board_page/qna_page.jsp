@@ -84,7 +84,7 @@
 				</div>
 			</article>
 			<div class="like-button">
-				<button class="w-btn" type="button" onclick = "location.href='community_like.jsp?number=<%=dto.getNumber()%>'">좋아요!</button>
+				<button class="w-btn" type="button" onclick = "location.href='http://localhost:8080/Pjt/project/board_page/qna_like.jsp?number=<%=dto.getNumber()%>'">좋아요!</button>
 				<p><%=dto.getLike() %></p>
 			</div>
 			<article class="comments">
