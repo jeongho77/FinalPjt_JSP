@@ -38,7 +38,7 @@
             </button>
         <%
         }else{
-            %><button onclick="moveLogout()" class="w-btn w-btn-indigo" type="button">
+            %><button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo" type="button">
                로그아웃
             </button>
         <%   }%>
@@ -48,9 +48,17 @@
         <h2>질문과 답변</h2>
         <small>여러분들의 질문과 답변을 위한 공간입니다.</small>
     </div>
+    <%
+	if (session.getAttribute("user") == null) {
+	} 
+	else {%>
     <div class="write">
-        <button onclick="moveWrite()" class="w-btn" type="button">작성하기</button>
+        <button onclick="location.href='<%=request.getContextPath()%>/project/board_page/write.jsp'" class="w-btn" type="button">작성하기</button>
     </div>
+    <%
+	}
+	%>
+	
     <%
     for (BoardDto dto : dtos){ 
     %> 

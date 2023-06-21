@@ -8,11 +8,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="community.css">
-    <script>
-    	function showAlert() {
-    		alert('로그인 후 사용할 수 있습니다!!!'');
-    	}
-    </script>
     <title>커뮤니티</title>
 </head>
 <body>
@@ -42,7 +37,7 @@
             </button>
         <%
         }else{
-            %><button onclick="moveLogout()" class="w-btn w-btn-indigo" type="button">
+            %><button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo" type="button">
                로그아웃
             </button>
         <%   }%>
@@ -52,9 +47,17 @@
         <h2>커뮤니티</h2>
         <small>여러분들의 소통을 위한 공간입니다.</small>
     </div>
+    <%
+	if (session.getAttribute("user") == null) {
+	} 
+	else {%>
     <div class="write">
         <button onclick="location.href='<%=request.getContextPath()%>/project/board_page/write.jsp'" class="w-btn" type="button">작성하기</button>
     </div>
+    <%
+	}
+	%>
+	
     <%
     for (BoardDto dto : dtos){ 
     %> 
