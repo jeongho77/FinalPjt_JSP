@@ -48,40 +48,46 @@ public class ReplyDao {
 	
 	public void Know_Reply_Insert(ReplyDto dto) {
 		String sql = "INSERT INTO knowledge_reply(board_num ,writer, content) VALUES(?, ?, ?)";
-		
-		try (
-			Connection con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-		){	
-			
-			pstmt.setInt(1, dto.getB_num());
-			pstmt.setString(2, dto.getWriter());
-			pstmt.setString(3, dto.getContent());
-			pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+		String updateSql = "UPDATE knowledge_board SET reply_cnt = reply_cnt + 1 WHERE number = ?";
+
+	    try (Connection con = getConnection();
+	         PreparedStatement pstmt = con.prepareStatement(sql);
+	         PreparedStatement updateStmt = con.prepareStatement(updateSql)) {
+
+	        pstmt.setInt(1, dto.getB_num());
+	        pstmt.setString(2, dto.getWriter());
+	        pstmt.setString(3, dto.getContent());
+	        pstmt.executeUpdate();
+
+	        // 댓글이 성공적으로 삽입되면 com_board의 reply_cnt 값을 1씩 증가시킴
+	        updateStmt.setInt(1, dto.getB_num());
+	        updateStmt.executeUpdate();
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 	
 	public void Qa_Reply_Insert(ReplyDto dto) {
 		String sql = "INSERT INTO qa_reply(board_num ,writer, content) VALUES(?, ?, ?)";
-		
-		try (
-			Connection con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-		){	
-			
-			pstmt.setInt(1, dto.getB_num());
-			pstmt.setString(2, dto.getWriter());
-			pstmt.setString(3, dto.getContent());
-			pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+		String updateSql = "UPDATE qa_board SET reply_cnt = reply_cnt + 1 WHERE number = ?";
+
+	    try (Connection con = getConnection();
+	         PreparedStatement pstmt = con.prepareStatement(sql);
+	         PreparedStatement updateStmt = con.prepareStatement(updateSql)) {
+
+	        pstmt.setInt(1, dto.getB_num());
+	        pstmt.setString(2, dto.getWriter());
+	        pstmt.setString(3, dto.getContent());
+	        pstmt.executeUpdate();
+
+	        // 댓글이 성공적으로 삽입되면 com_board의 reply_cnt 값을 1씩 증가시킴
+	        updateStmt.setInt(1, dto.getB_num());
+	        updateStmt.executeUpdate();
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 	// 데이터베이스에서 테이블에 있는 레코드를 가져오는 메소드
 	//1. 접근제어자
