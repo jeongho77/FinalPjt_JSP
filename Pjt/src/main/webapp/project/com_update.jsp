@@ -57,7 +57,7 @@
 	<main class="container">
 		<section class="main-list">
 			<div class="page-title">
-				<h2>글 작성하기</h2>
+				<h2>글 수정하기</h2>
 			</div>
 			<form action="com_update_ok.jsp" method="get">
 				<div class="input-group" style="display:none">
