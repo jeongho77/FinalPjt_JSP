@@ -121,9 +121,6 @@ button {
     display: flex;
     align-items: center;
 }
-#reply_delete{
-	margin: 0px;
-}
 
 .author {
     margin-right: 10px;

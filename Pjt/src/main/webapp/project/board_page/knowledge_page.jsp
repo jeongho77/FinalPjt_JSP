@@ -118,7 +118,9 @@
 					<%
 					if (reply.getWriter().equals(session.getAttribute("user"))) {
 					%>
-					<button id="reply_delete" type="button" onclick="location.href='../knowledge_reply_delete.jsp?number=<%=reply.getNumber()%>'">삭제하기</button>
+					<button style="width:20px; height: 20px; border: none; margin: 0px; margin-left:400px;" type="button" onclick="location.href='../qna_reply_delete.jsp?number=<%=reply.getNumber()%>'">
+						<img style="width:20px; height: 20px;" class="reply_delete" src="../images/trash.jpg">
+					</button>
 					<%
 					}
 					%>
