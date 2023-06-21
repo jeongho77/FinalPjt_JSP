@@ -3,7 +3,7 @@ function moveMain() {
     location.href = "http://localhost:8080/Pjt/project/index.jsp"
 }
 function moveCommunity() {
-    location.href = "community.html"
+    location.href = "community.jsp"
 }
 
 function moveKnowledge() {
@@ -11,7 +11,7 @@ function moveKnowledge() {
 }
 
 function moveQ() {
-    location.href = "qna.html"
+    location.href = "qna.jsp"
 }
 
 function moveCommunity() {
@@ -19,7 +19,7 @@ function moveCommunity() {
 }
 
 function moveCommunityPage() {
-    location.href = "community_page.html"
+    location.href = "community_page.jsp"
 }
 
 function moveLogin() {
