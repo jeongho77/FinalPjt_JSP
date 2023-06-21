@@ -130,6 +130,7 @@ public class LoginDao {
 		
 		public LoginDto Update(LoginDto Dto) {
 			String sql = "UPDATE user set name=?, pwd=?, nickname=?, email = ? where nickname=?";
+			System.out.println("하이");
 			LoginDto dto = new LoginDto();
 			try(
 				Connection con = getConnection();

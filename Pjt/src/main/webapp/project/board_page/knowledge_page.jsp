@@ -45,17 +45,15 @@
 				type="button">회원가입</button>
 			<%
 			} else {
-<<<<<<< HEAD
+
 			%><button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
 				type="button">회원정보수정</button>
 			<button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo"
-=======
-			%><button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo"
->>>>>>> branch 'main' of https://github.com/jeongho77/FinalPjt_JSP.git
 				type="button">로그아웃</button>
 			<%
 			}
 			%>
+			
 		</div>
 	</header>
 
