@@ -117,7 +117,13 @@
 					<p class="comment-author"><%=reply.getWriter()%></p>
 					<p class="comment-content"><%=reply.getContent()%></p>
 					<p class="comment-date"><%=reply.getDate()%>
+					<%
+					if (reply.getWriter().equals(session.getAttribute("user"))) {
+					%>
 					<button id="reply_delete" type="button" onclick="location.href='../com_reply_delete.jsp?number=<%=reply.getNumber()%>'">삭제하기</button>
+					<%
+					}
+					%>
 					</p>
 				</li>
 				<%

@@ -8,7 +8,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="community.css">
-    <script type="text/javascript" src="community.js"></script>
+    <script>
+    	function showAlert() {
+    		alert('로그인 후 사용할 수 있습니다!!!'');
+    	}
+    </script>
     <title>커뮤니티</title>
 </head>
 <body>
@@ -57,7 +61,16 @@
     <div class="container">
         <section class="post-list">
             <article class="post">
-                <h2 class="post-title"> <a href = "community_page.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></a></h2>
+                <%
+				if (session.getAttribute("user") == null) {
+				%>
+					<h2 class="post-title" onclick="showAlert()"><%=dto.getTitle() %></h2>
+				<% 
+				} else {
+					%>
+					<h2 class="post-title"> <a href = "community_page.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></a> </h2>
+				<%} %>
+               
                 <div class="post-meta">
                     <div id="left">
                          <p>작성자 : <%=dto.getWriter() %></p>
