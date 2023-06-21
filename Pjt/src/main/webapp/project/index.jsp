@@ -16,20 +16,19 @@
 </head>
 
 <body>
-	<%
-	BoardDao dao = new BoardDao();
-	ArrayList<BoardDto> dtos = dao.Com_list();
-	%>
+	
 	<header>
 		<img src="images/title.png" onclick="moveMain()" alt="타이틀">
 		<nav>
-			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span>
-			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>
-			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'" class="w-btn">질문과 답변</span>
-			
+			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> <span
+				onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'"
+				class="w-btn">지식</span> <span
+				onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'"
+				class="w-btn">질문과 답변</span>
+
 		</nav>
 		<%
-			if (session.getAttribute("user") == null) {
+		if (session.getAttribute("user") == null) {
 		%>
 		<div>
 			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
@@ -38,19 +37,20 @@
 				type="button">회원가입</button>
 		</div>
 		<%
-			} else {
+		} else {
 		%>
 		<div class="login-success">
-            <p>환영합니다. <%= session.getAttribute("user") %>님</p>
-            <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
-                회원정보수정
-            </button>
-            <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
-                로그아웃
-            </button>
-        </div> 
+			<p>
+				환영합니다.
+				<%=session.getAttribute("user")%>님
+			</p>
+			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
+				type="button">회원정보수정</button>
+			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
+				type="button">로그아웃</button>
+		</div>
 		<%
-			}
+		}
 		%>
 	</header>
 	<div class="postcontainer">
@@ -63,6 +63,7 @@
 	</div>
 	<div class="box-container">
 		<div class="box">
+		
 			<h2>실시간 BEST</h2>
 			<ul>
 				<li>
@@ -91,46 +92,75 @@
 			</ul>
 		</div>
 		<div class="box" id="box1">
-    <h2>커뮤니티</h2>
-    <ul>
-        <%
-        int count = 0;
-        for (BoardDto dto : dtos) {
-            if (count >= 5) {
-                break;
-            }
-        %>
-        <li>
-            <div onclick="goToCommunityPage(<%=dto.getNumber()%>)" id="left">
-                <h3><%=dto.getTitle()%></h3>
-                <small>작성자: <%=dto.getWriter()%></small> <small> | </small> <small>작성일: <%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
-            </div>
-            <div id="right">
-                <img src="images/icon_chat.png" alt="댓글"> <small>10</small>
-                <img src="images/icon_heart.png" alt="좋아요"> <small>20</small>
-            </div>    
-        </li>
-        <%
-        count++;
-        }
-        %>
-    </ul>
-</div>
+			<h2>커뮤니티</h2>
+			<ul>
+				<%
+	BoardDao dao = new BoardDao();
+	ArrayList<BoardDto> dtos = dao.Com_list();
+	%>
+				<%
+				int count = 0;
+				for (BoardDto dto : dtos) {
+					if (count >= 5) {
+						break;
+					}
+				%>
+				<li>
+					<div onclick="goToCommunityPage(<%=dto.getNumber()%>)" id="left">
+						<h3><%=dto.getTitle()%></h3>
+						<small>작성자: <%=dto.getWriter()%></small> <small> | </small> <small>작성일:
+							<%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
+					</div>
+					<div id="right">
+						<img src="images/icon_chat.png" alt="댓글"> <small>10</small>
+						<img src="images/icon_heart.png" alt="좋아요"> <small>20</small>
+					</div>
+				</li>
+				<%
+				count++;
+				}
+				%>
+			</ul>
+		</div>
 
-<script>
+		<script>
 function goToCommunityPage(number) {
     var url = "http://localhost:8080/Pjt/project/board_page/community_page.jsp?number=" + number;
     window.location.href = url;
 }
 </script>
 
-		<div class="box" id="box2">
-            <h2>지식</h2>
-            <ul>
-					
-					
-            </ul>
-        </div>
+		<div class="box" id="box1">
+			<h2>지식</h2>
+			<ul>
+				<%
+				
+				ArrayList<BoardDto> dtos2 = dao.Know_list();
+				
+				int count1 = 0;
+				for (BoardDto dto : dtos2) {
+					if (count1 >= 5) {
+						break;
+					}
+				%>
+				<li>
+					<div onclick="goToCommunityPage(<%=dto.getNumber()%>)" id="left">
+						<h3><%=dto.getTitle()%></h3>
+						<small>작성자: <%=dto.getWriter()%></small> <small> | </small> <small>작성일:
+							<%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
+					</div>
+					<div id="right">
+						<img src="images/icon_chat.png" alt="댓글"> <small>10</small>
+						<img src="images/icon_heart.png" alt="좋아요"> <small>20</small>
+					</div>
+				</li>
+				<%
+				count1++;
+				}
+				%>
+				
+			</ul>
+		</div>
 		<div class="box" id="box3">
 			<h2>질문과 답변</h2>
 			<ul>
