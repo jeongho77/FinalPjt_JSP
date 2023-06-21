@@ -17,7 +17,7 @@
 	
 %>
     <header>
-        <img src="../images/title.png" onclick="location.href='<%=request.getContextPath()%>/project/index.jsp'" class="w-btn" alt="타이틀">
+        <img src="../images/title.png" onclick="location.href='<%=request.getContextPath()%>/project/index.jsp'" alt="타이틀">
         <nav>
             <span onclick="location.href='<%=request.getContextPath()%>/project/board_page/community.jsp'" class="w-btn">커뮤니티</span>
             <span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>

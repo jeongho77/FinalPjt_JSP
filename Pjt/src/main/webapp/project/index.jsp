@@ -169,7 +169,7 @@ function goToKnowPage(number) {
 				
 			</ul>
 		</div>
-	<div class="box" id="box1">
+		<div class="box" id="box1">
 			<h2>질문과 답변</h2>
 			<ul>
 				<%
@@ -200,6 +200,7 @@ function goToKnowPage(number) {
 				
 			</ul>
 		</div>
+</div>
 	<footer>
 		<p>Nekarakubae &copy; 2023. All rights reserved.</p>
 	</footer>
