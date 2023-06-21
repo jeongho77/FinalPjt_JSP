@@ -87,14 +87,17 @@ public class ReplyDao {
 	//1. 접근제어자
 	//2. 반환 데이터 타입
 	//3. 입력 매개변수
-	public ArrayList<ReplyDto> Reply_list() { 
-		String sql = "SELECT * FROM com_reply ORDER BY regdate DESC";
+	public ArrayList<ReplyDto> Reply_list(int num) { 
+		String sql = "SELECT * FROM com_reply where = ? ORDER BY regdate DESC";
+		
 		ArrayList<ReplyDto> dtos = new ArrayList<ReplyDto>();
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 		) {
+			pstmt.setInt(1, num);
 			ResultSet rs = pstmt.executeQuery();
+			
 			while(rs.next()) {
 				int number = rs.getInt("number");
 				int board_num = rs.getInt("board_num");
@@ -113,13 +116,14 @@ public class ReplyDao {
 		return dtos;
 	}
 	
-	public ArrayList<ReplyDto> Know_Reply_list() { 
-		String sql = "SELECT * FROM knowledge_reply ORDER BY regdate DESC";
+	public ArrayList<ReplyDto> Know_Reply_list(int num) { 
+		String sql = "SELECT * FROM knowledge_reply where = ? ORDER BY regdate DESC";
 		ArrayList<ReplyDto> dtos = new ArrayList<ReplyDto>();
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 		) {
+			pstmt.setInt(1, num);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				int number = rs.getInt("number");
@@ -129,7 +133,7 @@ public class ReplyDao {
 				int like = rs.getInt("like");
 				Date date = rs.getDate("regdate");
 				
-				ReplyDto dto = new ReplyDto(number, board_num, writer, content, like, date);
+				ReplyDto dto = new ReplyDto(number,board_num, writer, content, like, date);
 				dtos.add(dto);
 			}
 		} catch (Exception e) {
@@ -139,13 +143,14 @@ public class ReplyDao {
 		return dtos;
 	}
 	
-	public ArrayList<ReplyDto> Qa_Reply_list() { 
-		String sql = "SELECT * FROM qa_reply ORDER BY regdate DESC";
+	public ArrayList<ReplyDto> Qa_Reply_list(int num) { 
+		String sql = "SELECT * FROM qa_reply where = ? ORDER BY regdate DESC";
 		ArrayList<ReplyDto> dtos = new ArrayList<ReplyDto>();
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
 		) {
+			pstmt.setInt(1,num);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				int number = rs.getInt("number");
@@ -318,7 +323,7 @@ public class ReplyDao {
 	
 	public void Com_Delete(int number) {
 		String sql = "DELETE from com_reply where number = ?";
-		
+		System.out.println("안녕");
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);

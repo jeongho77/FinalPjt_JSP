@@ -112,8 +112,8 @@
 							<%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
 					</div>
 					<div id="right">
-						<img src="images/icon_chat.png" alt="댓글"> <small>10</small>
-						<img src="images/icon_heart.png" alt="좋아요"> <small>20</small>
+						<img src="images/icon_chat.png" alt="댓글"> <small><%=dto.getReply_cnt() %></small>
+						<img src="images/icon_heart.png" alt="좋아요"> <small><%=dto.getLike() %></small>
 					</div>
 				</li>
 				<%
@@ -158,8 +158,8 @@ function goToKnowPage(number) {
 							<%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
 					</div>
 					<div id="right">
-						<img src="images/icon_chat.png" alt="댓글"> <small>10</small>
-						<img src="images/icon_heart.png" alt="좋아요"> <small>20</small>
+						<img src="images/icon_chat.png" alt="댓글"> <small><%=dto.getReply_cnt() %></small>
+						<img src="images/icon_heart.png" alt="좋아요"> <small><%=dto.getLike() %></small>
 					</div>
 				</li>
 				<%

@@ -23,7 +23,7 @@
 	BoardDao dao = new BoardDao();
 	BoardDto dto = dao.Com_getOne(number);
 	ReplyDao dao2 = new ReplyDao();
-	ArrayList<ReplyDto> replyList = dao2.Reply_list();
+	ArrayList<ReplyDto> replyList = dao2.Reply_list(number);
 	dao.com_view(number);
 	%>
 
