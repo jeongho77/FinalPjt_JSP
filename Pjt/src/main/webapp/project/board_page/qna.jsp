@@ -57,7 +57,7 @@
     <div class="container">
         <section class="post-list">
             <article class="post">
-                <h2 class="post-title"> <a href = "community_page.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></a></h2>
+                <h2 class="post-title"> <a href = "qna_page.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></a></h2>
                 <div class="post-meta">
                     <div id="left">
                          <p>ÀÛ¼ºÀÚ : <%=dto.getWriter() %></p>

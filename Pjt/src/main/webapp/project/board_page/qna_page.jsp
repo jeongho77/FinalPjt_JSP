@@ -59,8 +59,8 @@
 			if (dto.getWriter().equals(session.getAttribute("user"))) {
 			%>
 			<div class="modify-button">
-   				 <button class="changeBtn w-btn" type="button" onclick="location.href='../com_update.jsp?number=<%=dto.getNumber()%>'">수정</button>
-    			 <button class="changeBtn w-btn" type="button" onclick="location.href='../com_delete.jsp?number=<%=dto.getNumber()%>'">삭제</button>
+   				 <button class="changeBtn w-btn" type="button" onclick="location.href='../qna_update.jsp?number=<%=dto.getNumber()%>'">수정</button>
+    			 <button class="changeBtn w-btn" type="button" onclick="location.href='../qna_delete.jsp?number=<%=dto.getNumber()%>'">삭제</button>
 			</div>
 			<%
 			}
