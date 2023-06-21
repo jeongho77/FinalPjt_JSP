@@ -11,7 +11,7 @@ function moveKnowledge() {
 }
 
 function moveQ() {
-    location.href = "board_page/qna.html"
+    location.href = "board_page/qna.jsp"
 }
 
 function moveCommunity() {

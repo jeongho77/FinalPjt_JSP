@@ -37,7 +37,7 @@
             
         } else {
             dao.Qa_Insert(dto);
-            response.sendRedirect("community.jsp");
+            response.sendRedirect("qna.jsp");
         }
     }
 %>

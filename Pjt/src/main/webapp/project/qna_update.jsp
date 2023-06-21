@@ -1,24 +1,28 @@
+<%@page import="project.BoardDto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="project.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="write.css">
-<script type="text/javascript" src="board/community.js"></script>
-<title>글 작성하기</title>
+<title>Insert title here</title>
 </head>
-
+<link rel="stylesheet" type="text/css" href="com_update.css">
+<script type="text/javascript" src="index.js"></script>
 <body>
+<%
+	int number = Integer.parseInt(request.getParameter("number"));
+	BoardDao dao = new BoardDao();
+	BoardDto dto = dao.Qa_getOne(number);
+%>
 	<header>
 		<img src="../images/title.png" onclick="moveMain()" alt="타이틀">
 		<nav>
-			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> 
-			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>
-			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'" class="w-btn">질문과 답변</span>
-			
+			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> <span
+				onclick="moveKnowledge()" class="w-btn">지식</span> <span
+				onclick="moveQ()" class="w-btn">질문과 답변</span>
 		</nav>
 		<div>
 			<%
@@ -48,16 +52,20 @@
 			%>
 		</div>
 	</header>
-
 	<main class="container">
 		<section class="main-list">
 			<div class="page-title">
 				<h2>글 작성하기</h2>
 			</div>
-			<form action="com_write_ok.jsp" method="get">
+			<form action="com_update_ok.jsp" method="get">
+				<div class="input-group">
+					<p>
+						글 번호<input type="text" name="number" value="<%=dto.getNumber()%>" readOnly>
+					</p>
+				</div>
 				<div class="input-group">
 					<label for="title">제목</label> <input type="text" id="title"
-						name="title" placeholder="제목을 입력하세요.">
+						name="title" value="<%=dto.getTitle()%>">
 				</div>
 				<div class="input-group">
 					<label for="title">카테고리</label>
@@ -73,16 +81,15 @@
 				</div>
 				<div class="input-group">
 					<label for="content">내용</label>
-					<textarea id="content" name="content" placeholder="내용을 입력하세요."></textarea>
+					<input type="text" class="form-control" value="<%=dto.getContent() %>" name="content" maxlength="2048" style="width: 500px; height: 300px;">
 				</div>
 				<div class="button-group">
 					<input type="hidden" name="writer" value="<%=session.getAttribute("user")%>">
-					<button class="w-btn w-btn-indigo" type="submit">작성 완료</button>
+					<button class="w-btn w-btn-indigo" type="submit">수정하기</button>
 					<button class="w-btn" type="button" onclick="history.back()">취소</button>
 				</div>
 			</form>
 		</section>
 	</main>
 </body>
-
 </html>

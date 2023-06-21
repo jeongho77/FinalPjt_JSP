@@ -2,17 +2,16 @@
 function moveMain() {
     location.href = "http://localhost:8080/Pjt/project/index.jsp"
 }
+function moveCommunity() {
+    location.href = "community.jsp"
+}
 
 function moveKnowledge() {
-    location.href = "http://localhost:8080/Pjt/project/board_page/knowledge.jsp";
+    location.href = "knowledge.jsp"
 }
-
+   
 function moveQ() {
-    location.href = "qna.html"
-}
-
-function moveKnow(){
-	loaction.href = "http://localhost:8080/Pjt/project/board_page/knowledge.jsp"
+    location.href = "qna.jsp"
 }
 
 function moveCommunity() {
@@ -20,7 +19,7 @@ function moveCommunity() {
 }
 
 function moveCommunityPage() {
-    location.href = "community_page.html"
+    location.href = "community_page.jsp"
 }
 
 function moveLogin() {
