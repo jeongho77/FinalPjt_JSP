@@ -333,7 +333,7 @@ public class ReplyDao {
 	}
 	
 	public void Know_Delete(int number) {
-		String sql = "DELETE from knowledge_board where number = ?";
+		String sql = "DELETE from knowledge_reply where number = ?";
 		System.out.println("안녕");
 		try (
 			Connection con = getConnection();
@@ -349,7 +349,7 @@ public class ReplyDao {
 	}
 	
 	public void Qa_Delete(int number) {
-		String sql = "DELETE from qa_board where number = ?";
+		String sql = "DELETE from qa_reply where number = ?";
 		System.out.println("안녕");
 		try (
 			Connection con = getConnection();
