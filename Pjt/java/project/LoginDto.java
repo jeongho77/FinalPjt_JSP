@@ -11,7 +11,7 @@ public class LoginDto {
 		return number;
 	}
 
-	/**
+	/**  
 	 * @param number the number to set
 	 */
 	public void setNumber(int number) {
