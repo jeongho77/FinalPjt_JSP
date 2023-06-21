@@ -278,10 +278,14 @@ public class BoardDao {
 	
 	public ArrayList<BoardDto> best_list() { 
 		String sql = "SELECT * "
-				+ "FROM com_board "
-				+ "JOIN knowledge_board ON com_board.number = knowledge_board.number "
-				+ "JOIN qa_board ON knowledge_board.number = qa_board.number "
-				+ "ORDER BY com_board.view_cnt DESC; ";
+				+ "FROM ( "
+				+ "    SELECT * FROM com_board "
+				+ "    UNION ALL "
+				+ "    SELECT * FROM knowledge_board "
+				+ "    UNION ALL "
+				+ "    SELECT * FROM qa_board "
+				+ ") AS combined_tables "
+				+ "ORDER BY view_cnt DESC;";
 		ArrayList<BoardDto> dtos = new ArrayList<BoardDto>();
 		try (
 			Connection con = getConnection();
