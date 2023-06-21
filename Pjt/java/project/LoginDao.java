@@ -10,7 +10,9 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class LoginDao {
-	// DBCP로 데이터베이스에 접근하여 Connection을 얻어오는 메소드
+	private static final LoginDto LoginDto = null;
+
+		// DBCP로 데이터베이스에 접근하여 Connection을 얻어오는 메소드
 		// 1. 접근제어자
 		// 2. 반환 데이터타입
 		// 3. 입력 매개변수
@@ -128,27 +130,49 @@ public class LoginDao {
 		      return dto;
 		   }
 		
-		public LoginDto Update(LoginDto Dto) {
-			String sql = "UPDATE user set name=?, pwd=?, nickname=?, email = ? where nickname=?";
-			System.out.println("하이");
-			LoginDto dto = new LoginDto();
-			try(
-				Connection con = getConnection();
-				PreparedStatement pstmt = con.prepareStatement(sql);
-				) {
-					pstmt.setString(1, dto.getName());
-					pstmt.setString(2, dto.getPwd());
-					pstmt.setString(3, dto.getNickname());
-					pstmt.setString(4, dto.getEmail());
-					pstmt.setString(5, dto.getA());
-				
-					int i = pstmt.executeUpdate();
-				
-			} catch(Exception e) {
-				e.printStackTrace();
+		public LoginDto getNumber(String nickname) {
+			   String sql = "SELECT * FROM user WHERE nickname=?";
+			   LoginDto loginDto = null; // LoginDto 객체 선언
+
+			   try (
+			      Connection con = getConnection();
+			      PreparedStatement pstmt = con.prepareStatement(sql);
+			   ) {
+			      pstmt.setString(1, nickname);
+			      ResultSet rs = pstmt.executeQuery();
+
+			      if (rs.next()) {
+			         int number = rs.getInt("number");
+			         loginDto = new LoginDto(number); // LoginDto 객체 생성 및 초기화
+			      }
+
+			   } catch (Exception e) {
+			      e.printStackTrace();
+			   }
+
+			   return loginDto; // LoginDto 객체 반환
 			}
-			return dto;
-		}
+
+		
+			public LoginDto Update(LoginDto Dto) {
+				String sql = "UPDATE user set name=?, pwd=?, email = ? where number = ?";
+				System.out.println("하이");
+				
+				try(
+					Connection con = getConnection();
+					PreparedStatement pstmt = con.prepareStatement(sql);
+					) {
+						pstmt.setString(1, Dto.getName());
+						pstmt.setString(2, Dto.getPwd());
+						pstmt.setString(3, Dto.getEmail());
+						pstmt.setInt(4, Dto.getNumber());
+					    pstmt.executeUpdate();
+					
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				return Dto;
+			}
 		
 		public void Delete(String email) {
 		      String sql = "DELETE from user where email = ?";

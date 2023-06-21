@@ -8,7 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% int number = Integer.parseInt(request.getParameter("number")); 
+	<% 
+		int number = Integer.parseInt(request.getParameter("number")); 
 	   BoardDao dao = new BoardDao();
 	   dao.know_like(number);
 	   

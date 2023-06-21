@@ -23,13 +23,16 @@
 	String name = request.getParameter("name");
 	String email = request.getParameter("email");
 	String password = request.getParameter("password");
-	String nickname = request.getParameter("nickname");
-	  
+	
+	
 	LoginDao dao = new LoginDao();
-	LoginDto Dto = new LoginDto(name,password,nickname,email,a);
+	LoginDto dto = dao.getNumber(a); // getNumber 메서드의 반환값인 회원 번호를 가져옴
+	int b = dto.getNumber();
+	
+	LoginDto Dto = new LoginDto(name, password, email, b);
 	dao.Update(Dto);
 	
-	
+	response.sendRedirect("index.jsp");
 %>
 </body>
 </html>

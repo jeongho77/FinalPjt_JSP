@@ -22,7 +22,7 @@
     if (dto != null) {
         // 로그인 성공 시 세션 넘겨준후 index로 감
         session.setAttribute("user", dto.getNickname());
-        response.sendRedirect(previousPage);
+        response.sendRedirect("index.jsp");
        
     } else {
         // 로그인 실패 시 알림창을 띄워서 메시지 출력
