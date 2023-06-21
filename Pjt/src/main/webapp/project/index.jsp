@@ -33,7 +33,7 @@
 		<div>
 			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
 				type="button">로그인</button>
-			<button onclick="location.href='signup.jsp'" class="w-btn w-btn-indigo"
+			<button onclick="moveSignup()" class="w-btn w-btn-indigo"
 				type="button">회원가입</button>
 		</div>
 		<%
@@ -128,6 +128,14 @@ function goToCommunityPage(number) {
     var url = "http://localhost:8080/Pjt/project/board_page/community_page.jsp?number=" + number;
     window.location.href = url;
 }
+function goToQNAPage(number) {
+    var url = "http://localhost:8080/Pjt/project/board_page/qna_page.jsp?number=" + number;
+    window.location.href = url;
+}
+function goToKnowPage(number) {
+    var url = "http://localhost:8080/Pjt/project/board_page/knowledge_page.jsp?number=" + number;
+    window.location.href = url;
+}
 </script>
 
 		<div class="box" id="box1">
@@ -144,7 +152,7 @@ function goToCommunityPage(number) {
 					}
 				%>
 				<li>
-					<div onclick="goToCommunityPage(<%=dto.getNumber()%>)" id="left">
+					<div onclick="goToKnowPage(<%=dto.getNumber()%>)" id="left">
 						<h3><%=dto.getTitle()%></h3>
 						<small>작성자: <%=dto.getWriter()%></small> <small> | </small> <small>작성일:
 							<%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
@@ -161,27 +169,37 @@ function goToCommunityPage(number) {
 				
 			</ul>
 		</div>
-		<div class="box" id="box3">
+	<div class="box" id="box1">
 			<h2>질문과 답변</h2>
 			<ul>
+				<%
+				
+				ArrayList<BoardDto> dtos3 = dao.Qa_list();
+				
+				int count2 = 0;
+				for (BoardDto dto : dtos3) {
+					if (count1 >= 5) {
+						break;
+					}
+				%>
 				<li>
-					<h3>글 제목 1</h3> <small>작성자: 사용자1 | 작성일: 2023-05-24</small>
+					<div onclick="goToQNAPage(<%=dto.getNumber()%>)" id="left">
+						<h3><%=dto.getTitle()%></h3>
+						<small>작성자: <%=dto.getWriter()%></small> <small> | </small> <small>작성일:
+							<%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
+					</div>
+					<div id="right">
+						<img src="images/icon_chat.png" alt="댓글"> <small>10</small>
+						<img src="images/icon_heart.png" alt="좋아요"> <small>20</small>
+					</div>
 				</li>
-				<li>
-					<h3>글 제목 2</h3> <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-				</li>
-				<li>
-					<h3>글 제목 3</h3> <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-				</li>
-				<li>
-					<h3>글 제목 4</h3> <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-				</li>
-				<li>
-					<h3>글 제목 5</h3> <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-				</li>
+				<%
+				count1++;
+				}
+				%>
+				
 			</ul>
 		</div>
-	</div>
 	<footer>
 		<p>Nekarakubae &copy; 2023. All rights reserved.</p>
 	</footer>

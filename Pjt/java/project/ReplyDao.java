@@ -25,22 +25,25 @@ public class ReplyDao {
 	}
 	
 	public void Reply_Insert(ReplyDto dto) {
-		String sql = "INSERT INTO com_reply(board_num ,writer, content) VALUES(?, ?, ?)";
-		
-		try (
-			Connection con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-		){	
-			
-			pstmt.setInt(1, dto.getB_num());
-			pstmt.setString(2, dto.getWriter());
-			pstmt.setString(3, dto.getContent());
-			pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+	    String sql = "INSERT INTO com_reply(board_num, writer, content) VALUES(?, ?, ?)";
+	    String updateSql = "UPDATE com_board SET reply_cnt = reply_cnt + 1 WHERE number = ?";
+
+	    try (Connection con = getConnection();
+	         PreparedStatement pstmt = con.prepareStatement(sql);
+	         PreparedStatement updateStmt = con.prepareStatement(updateSql)) {
+
+	        pstmt.setInt(1, dto.getB_num());
+	        pstmt.setString(2, dto.getWriter());
+	        pstmt.setString(3, dto.getContent());
+	        pstmt.executeUpdate();
+
+	        // 댓글이 성공적으로 삽입되면 com_board의 reply_cnt 값을 1씩 증가시킴
+	        updateStmt.setInt(1, dto.getB_num());
+	        updateStmt.executeUpdate();
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 	
 	public void Know_Reply_Insert(ReplyDto dto) {
@@ -311,7 +314,7 @@ public class ReplyDao {
 	}
 	
 	public void Com_Delete(int number) {
-		String sql = "DELETE from com_board where number = ?";
+		String sql = "DELETE from com_reply where number = ?";
 		System.out.println("안녕");
 		try (
 			Connection con = getConnection();
