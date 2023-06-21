@@ -22,14 +22,31 @@
 	            <span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>
 			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'" class="w-btn">질문과 답변</span>
 		 </nav>
-        <div>
-            <button onclick="moveLogin()" class="w-btn w-btn-indigo" type="button">
-                로그인
-            </button>
-            <button onclick="location.href='signup.jsp'" class="w-btn w-btn-indigo" type="button">
-                회원가입
-            </button>
-        </div>
+        	<%
+		if (session.getAttribute("user") == null) {
+		%>
+		<div>
+			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
+				type="button">로그인</button>
+			<button onclick="moveSignup()" class="w-btn w-btn-indigo"
+				type="button">회원가입</button>
+		</div>
+		<%
+		} else {
+		%>
+		<div class="login-success">
+			<p>
+				환영합니다.
+				<%=session.getAttribute("user")%>님
+			</p>
+			<button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
+				type="button">회원정보수정</button>
+			<button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo"
+				type="button">로그아웃</button>
+		</div>
+		<%
+		}
+		%>
     </header>
     <div class="login-container">
         <h2>로그인</h2>

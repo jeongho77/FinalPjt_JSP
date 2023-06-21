@@ -37,9 +37,10 @@
             </button>
         <%
         }else{
-            %><button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo" type="button">
-               로그아웃
-            </button>
+            %><button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
+				type="button">회원정보수정</button>
+			<button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo"
+				type="button">로그아웃</button>
         <%   }%>
         </div>
     </header>

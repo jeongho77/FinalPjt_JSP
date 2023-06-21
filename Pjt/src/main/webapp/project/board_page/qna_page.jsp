@@ -46,7 +46,9 @@
 				type="button">회원가입</button>
 			<%
 			} else {
-			%><button onclick="moveLogout()" class="w-btn w-btn-indigo"
+			%><button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
+				type="button">회원정보수정</button>
+			<button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo"
 				type="button">로그아웃</button>
 			<%
 			}
