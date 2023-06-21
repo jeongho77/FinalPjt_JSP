@@ -144,7 +144,7 @@ public class ReplyDao {
 	}
 	
 	public ArrayList<ReplyDto> Qa_Reply_list(int num) { 
-		String sql = "SELECT * FROM qa_reply where = board_num ? ORDER BY regdate DESC";
+		String sql = "SELECT * FROM qa_reply where board_num = ? ORDER BY regdate DESC";
 		ArrayList<ReplyDto> dtos = new ArrayList<ReplyDto>();
 		try (
 			Connection con = getConnection();
