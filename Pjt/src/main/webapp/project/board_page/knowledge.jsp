@@ -65,9 +65,9 @@
     for (BoardDto dto : dtos){ 
     %> 
     <div class="container">
-        <section class="post-list">
+        <section class="post-list" onclick="location.href='knowledge_page.jsp?number=<%=dto.getNumber()%>'">
             <article class="post">
-              	<h2 class="post-title"> <a href = "knowledge_page.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></a> </h2>
+              	<h2 class="post-title"><%=dto.getTitle() %></h2>
                 <div class="post-meta">
                     <div id="left">
                          <p>ÀÛ¼ºÀÚ : <%=dto.getWriter() %></p>
