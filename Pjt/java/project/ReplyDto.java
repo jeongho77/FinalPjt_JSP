@@ -14,6 +14,7 @@ import java.sql.Date;
  */
 public class ReplyDto {
 
+	private int number;
 	private int b_num;
 	private String writer;
 	private String content;
@@ -26,12 +27,21 @@ public class ReplyDto {
 		this.content = content;
 	}
 
-	public ReplyDto(int b_num, String writer, String content, int like, Date date ) {
+	public ReplyDto(int number, int b_num, String writer, String content, int like, Date date ) {
+		this.number = number;
 		this.b_num = b_num;
 		this.writer = writer;
 		this.content = content;
 		this.like = like;
 		this.date = date;
+	}
+	
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
 	}
 	/**
 	 * @return the b_num

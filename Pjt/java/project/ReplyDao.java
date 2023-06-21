@@ -96,13 +96,14 @@ public class ReplyDao {
 		) {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
+				int number = rs.getInt("number");
 				int board_num = rs.getInt("board_num");
 				String writer = rs.getString("writer");
 				String content = rs.getString("content");
 				int like = rs.getInt("like");
 				Date date = rs.getDate("regdate");
 				
-				ReplyDto dto = new ReplyDto(board_num, writer, content, like, date);
+				ReplyDto dto = new ReplyDto(number, board_num, writer, content, like, date);
 				dtos.add(dto);
 			}
 		} catch (Exception e) {
@@ -121,13 +122,14 @@ public class ReplyDao {
 		) {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
+				int number = rs.getInt("number");
 				int board_num = rs.getInt("board_num");
 				String writer = rs.getString("writer");
 				String content = rs.getString("content");
 				int like = rs.getInt("like");
 				Date date = rs.getDate("regdate");
 				
-				ReplyDto dto = new ReplyDto(board_num, writer, content, like, date);
+				ReplyDto dto = new ReplyDto(number, board_num, writer, content, like, date);
 				dtos.add(dto);
 			}
 		} catch (Exception e) {
@@ -146,13 +148,14 @@ public class ReplyDao {
 		) {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
+				int number = rs.getInt("number");
 				int board_num = rs.getInt("board_num");
 				String writer = rs.getString("writer");
 				String content = rs.getString("content");
 				int like = rs.getInt("like");
 				Date date = rs.getDate("regdate");
 				
-				ReplyDto dto = new ReplyDto(board_num, writer, content, like, date);
+				ReplyDto dto = new ReplyDto(number, board_num, writer, content, like, date);
 				dtos.add(dto);
 			}
 		} catch (Exception e) {
@@ -315,7 +318,7 @@ public class ReplyDao {
 	
 	public void Com_Delete(int number) {
 		String sql = "DELETE from com_reply where number = ?";
-		System.out.println("안녕");
+		
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
