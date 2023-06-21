@@ -6,14 +6,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="signup.css">
+<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
    <header>
         <h1 onclick="moveMain()">Nekarakubae</h1>
         <nav>
             <span onclick="moveCommunity()" class="w-btn">커뮤니티</span>
-            <span onclick="moveKnowledge()" class="w-btn">지식</span>
-            <span onclick="moveQ()" class="w-btn">질문과 답변</span>
+           <span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>
+			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'" class="w-btn">질문과 답변</span>
+
         </nav>
         <div>
            <%  
