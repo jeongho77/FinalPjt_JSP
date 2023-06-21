@@ -10,7 +10,7 @@
 <body>
 <%
 	int number = Integer.parseInt(request.getParameter("number"));  
-	BoardDao dao = new BoardDao();   
+	BoardDao dao = new BoardDao();     
 	dao.Know_Delete(number);
 	
 	response.sendRedirect("board_page/knowledge.jsp");
