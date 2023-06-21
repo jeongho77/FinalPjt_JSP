@@ -67,6 +67,74 @@ public class BoardDao {
 		return;
 	}
 	
+	public void know_like(int i){
+		String sql = "update knowledge_board set `like` = `like` + 1 where number = ?";
+		
+		try (
+			Connection con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+		) {
+			pstmt.setInt(1, i);
+			pstmt.executeQuery();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return;
+	} 
+	
+	public void know_view(int i){
+		String sql = "update knowledge_board set `view_cnt` = `view_cnt` + 1 where number = ?";
+		
+		try (
+			Connection con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+		) {
+			pstmt.setInt(1, i);
+			pstmt.executeQuery();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return;
+	}
+	
+	public void qa_like(int i){
+		String sql = "update qa_board set `like` = `like` + 1 where number = ?";
+		
+		try (
+			Connection con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+		) {
+			pstmt.setInt(1, i);
+			pstmt.executeQuery();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return;
+	} 
+	
+	public void qa_view(int i){
+		String sql = "update qa_board set `view_cnt` = `view_cnt` + 1 where number = ?";
+		
+		try (
+			Connection con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+		) {
+			pstmt.setInt(1, i);
+			pstmt.executeQuery();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return;
+	}
+	
 	public void Com_Insert(BoardDto dto) {
 		String sql = "INSERT INTO com_board(title, content,writer) VALUES(?, ?,?)";
 		
