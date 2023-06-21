@@ -10,8 +10,9 @@
 <body>
 <%
 	int number = Integer.parseInt(request.getParameter("number"));
+    int number2 = Integer.parseInt(request.getParameter("com_num"));
 	ReplyDao dao = new ReplyDao();
-	dao.Know_Delete(number);
+	dao.Know_Delete(number,number2);
 	
 	String previousPage = request.getHeader("referer");
 	session.setAttribute("previousPage", previousPage);

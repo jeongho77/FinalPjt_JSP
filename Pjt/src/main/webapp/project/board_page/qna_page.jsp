@@ -120,7 +120,7 @@
 					<%
 					if (reply.getWriter().equals(session.getAttribute("user"))) {
 					%>
-					<button style="width:20px; height: 20px; border: none; position: absolute; transform: translateY(-50%); top: 70%; right: 0%" type="button" onclick="location.href='../qna_reply_delete.jsp?number=<%=reply.getNumber()%>'">
+					<button style="width:20px; height: 20px; border: none; position: absolute; transform: translateY(-50%); top: 70%; right: 0%" type="button" onclick="location.href='../qna_reply_delete.jsp?number=<%=reply.getNumber()%>&com_num=<%=dto.getNumber()%>'">
 						<img style="width:20px; height: 20px;" class="reply_delete" src="../images/trash.jpg">
 					</button>
 					<%

@@ -327,31 +327,40 @@ public class ReplyDao {
 		return dto;
 	}
 	
-	public void Com_Delete(int number) {
-		String sql = "DELETE from com_reply where number = ?";
-		System.out.println("안녕");
-		try (
-			Connection con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-		) {
-			pstmt.setInt(1, number);
-			pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+	public void Com_Delete(int number, int com_num) {
+	    String deleteSql = "DELETE FROM com_reply WHERE number = ?";
+	    String updateSql = "UPDATE com_board SET reply_cnt = reply_cnt - 1 WHERE number = ?";
+	    
+	    try (
+	        Connection con = getConnection();
+	        PreparedStatement deleteStmt = con.prepareStatement(deleteSql);
+	        PreparedStatement updateStmt = con.prepareStatement(updateSql);
+	    ) {
+	        deleteStmt.setInt(1, number);
+	        deleteStmt.executeUpdate();
+	        
+	        updateStmt.setInt(1, com_num);
+	        updateStmt.executeUpdate();
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 	
-	public void Know_Delete(int number) {
-		String sql = "DELETE from knowledge_reply where number = ?";
-		System.out.println("안녕");
+	
+	public void Know_Delete(int number , int com_num) {
+		String deleteSql = "DELETE FROM Knowledge_reply WHERE number = ?";
+	    String updateSql = "UPDATE knowledge_board SET reply_cnt = reply_cnt - 1 WHERE number = ?";
 		try (
 			Connection con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
+			PreparedStatement deleteStmt = con.prepareStatement(deleteSql);
+		    PreparedStatement updateStmt = con.prepareStatement(updateSql);
 		) {
-			pstmt.setInt(1, number);
-			pstmt.executeUpdate();
+			deleteStmt.setInt(1, number);
+	        deleteStmt.executeUpdate();
+	        
+	        updateStmt.setInt(1, com_num);
+	        updateStmt.executeUpdate();
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -359,16 +368,21 @@ public class ReplyDao {
 		}   
 	}
 	
-	public void Qa_Delete(int number) {
-		String sql = "DELETE from qa_reply where number = ?";
-		System.out.println("안녕");
+	public void Qa_Delete(int number, int com_num) {
+		String deleteSql = "DELETE FROM qa_reply WHERE number = ?";
+	    String updateSql = "UPDATE qa_board SET reply_cnt = reply_cnt - 1 WHERE number = ?";
 		try (
 			Connection con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
+			PreparedStatement deleteStmt = con.prepareStatement(deleteSql);
+		    PreparedStatement updateStmt = con.prepareStatement(updateSql);
+				
 		) {
-			pstmt.setInt(1, number);
-			pstmt.executeUpdate();
-			
+			deleteStmt.setInt(1, number);
+	        deleteStmt.executeUpdate();
+	        
+	        updateStmt.setInt(1, com_num);
+	        updateStmt.executeUpdate();
+	        
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
