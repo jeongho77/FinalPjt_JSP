@@ -29,15 +29,17 @@
     if (rdoValue != null) {
         if (rdoValue.equals("community")) {
             dao.Com_Insert(dto);	
+            response.sendRedirect("community.jsp");
             
         } else if (rdoValue.equals("knowledge")) {
             dao.Know_Insert(dto);
+            response.sendRedirect("knowledge.jsp");
             
         } else {
             dao.Qa_Insert(dto);
+            response.sendRedirect("community.jsp");
         }
     }
-    response.sendRedirect("community.jsp");
 %>
 </body>
 </html>

@@ -48,10 +48,11 @@ public class BoardDto {
 	 } 
 	 
 	 //게시판 글 수정
-	 public BoardDto(int number, String title, String content) {
+	 public BoardDto(int number, String title, String content, String writer) {
 		 this.number = number;
 		 this.title = title;
 		 this.content = content;
+		 this.writer = writer;
 	 }
 
 	/**

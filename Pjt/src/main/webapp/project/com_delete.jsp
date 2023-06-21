@@ -12,6 +12,6 @@
 	BoardDao dao = new BoardDao();
 	dao.Com_Delete(number);
 	
-	response.sendRedirect("com_list.jsp");
+	response.sendRedirect("board_page/community.jsp");
 %>
 </html>
