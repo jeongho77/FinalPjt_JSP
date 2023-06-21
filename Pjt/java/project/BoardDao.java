@@ -464,14 +464,20 @@ public class BoardDao {
 	}
 	
 	public void Com_Delete(int number) {
+		String updateSql = "DELETE from com_reply where board_num = ?";
 		String sql = "DELETE from com_board where number = ?";
-		System.out.println("안녕");
+		
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql);
-		) {
-			pstmt.setInt(1, number);
-			pstmt.executeUpdate();
+			PreparedStatement updateStmt = con.prepareStatement(updateSql)) {
+			
+			updateStmt.setInt(1, number);
+			updateStmt.executeUpdate();
+			
+			
+			pstmt.setInt(1, number);			
+			pstmt.executeUpdate();			
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -480,36 +486,47 @@ public class BoardDao {
 	}
 	
 	public void Know_Delete(int number) {
+		String updateSql = "DELETE from knowledge_reply where board_num = ?";
 		String sql = "DELETE from knowledge_board where number = ?";
 		System.out.println("안녕");
 		try (
-			Connection con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-		) {
-			pstmt.setInt(1, number);
-			pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
+				Connection con = getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql);
+				PreparedStatement updateStmt = con.prepareStatement(updateSql)) {
+				
+				updateStmt.setInt(1, number);
+				updateStmt.executeUpdate();
+				
+				
+				pstmt.setInt(1, number);			
+				pstmt.executeUpdate();			
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
 		}
-	}
 	
 	public void Qa_Delete(int number) {
+		String updateSql = "DELETE from qa_reply where board_num = ?";
 		String sql = "DELETE from qa_board where number = ?";
 		System.out.println("안녕");
 		try (
-			Connection con = getConnection();
-			PreparedStatement pstmt = con.prepareStatement(sql);
-		) {
-			pstmt.setInt(1, number);
-			pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
+				Connection con = getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql);
+				PreparedStatement updateStmt = con.prepareStatement(updateSql)) {
+				
+				updateStmt.setInt(1, number);
+				updateStmt.executeUpdate();
+				
+				
+				pstmt.setInt(1, number);			
+				pstmt.executeUpdate();			
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
 		}
-	}
-	
 	
 }
