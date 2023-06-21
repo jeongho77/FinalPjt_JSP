@@ -18,7 +18,7 @@
 	BoardDto dto = dao.Com_getOne(number);
 %>
 	<header>
-		<img src="../images/title.png" onclick="moveMain()" alt="타이틀">
+		<img src="images/title.png" onclick="moveMain()" alt="타이틀">
 		<nav>
 			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> <span
 				onclick="moveKnowledge()" class="w-btn">지식</span> <span
