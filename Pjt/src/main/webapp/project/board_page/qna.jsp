@@ -45,8 +45,8 @@
         </div>
     </header>
      <div class="page-title">
-        <h2>커뮤니티</h2>
-        <small>여러분들의 소통을 위한 공간입니다.</small>
+        <h2>질문과 답변</h2>
+        <small>여러분들의 질문과 답변을 위한 공간입니다.</small>
     </div>
     <div class="write">
         <button onclick="moveWrite()" class="w-btn" type="button">작성하기</button>

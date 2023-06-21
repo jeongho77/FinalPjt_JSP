@@ -22,6 +22,7 @@
 	String s = (String) session.getAttribute("user");
 	BoardDao dao = new BoardDao();
 	BoardDto dto = dao.Qa_getOne(number);
+	
 	ReplyDao dao2 = new ReplyDao();
 	ArrayList<ReplyDto> replyList = dao2.Qa_Reply_list(number);
 	dao.qa_view(number);
@@ -85,21 +86,21 @@
 				<p><%=dto.getLike() %></p>
 			</div>
 			<article class="comments">
-				<form action="qna_reply.jsp">
-				<div class="comment-form">
-					<input type="text" placeholder="댓글을 작성해주세요." name="content" class="comment-input"> 
-					<input type="hidden" name="number" value="<%=dto.getNumber()%>"> 
-					<input type="hidden" name="writer" value="<%=session.getAttribute("user")%>">
-					<%
-					if (session != null) {
-					%>
-					<button type="submit" class="comment-submit">등록</button>
-				</div>	
-					<%
-					} else {
-					//alert 사용해서 댓글 등록시 회원이 아니면 등록이 안되게끔 알려줘야함.
-					}
-					%>
+				<%
+				if (session.getAttribute("user") == null) {
+				}
+				else{%>
+				<form action="community_reply.jsp">
+					<div class="comment-form">
+						<input type="text" placeholder="댓글을 작성해주세요." name="content"
+							class="comment-input"> <input type="hidden" name="number"
+							value="<%=dto.getNumber()%>"> <input type="hidden"
+							name="writer" value="<%=session.getAttribute("user")%>">
+						<button type="submit" class="comment-submit">등록</button>
+						<%
+						}
+						%>
+						</div>
 				</form>
 			</article>
 			

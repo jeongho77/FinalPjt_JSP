@@ -92,15 +92,16 @@
 				<p><%=dto.getLike()%></p>
 			</div>
 			<article class="comments">
+			<%
+				if (session.getAttribute("user") == null) {
+				}
+				else{%>
 				<form action="community_reply.jsp">
 					<div class="comment-form">
 						<input type="text" placeholder="댓글을 작성해주세요." name="content"
 							class="comment-input"> <input type="hidden" name="number"
 							value="<%=dto.getNumber()%>"> <input type="hidden"
 							name="writer" value="<%=session.getAttribute("user")%>">
-						<%
-						if (session.getAttribute("user") != null) {
-						%>
 						<button type="submit" class="comment-submit">등록</button>
 						<%
 						}
