@@ -27,7 +27,7 @@
     System.out.println("등록 성공");
 	
     if (rdoValue != null) {
-        if (rdoValue.equals("community")) {
+        if (rdoValue.equals("community")) {  
             dao.Com_Insert(dto);	
             response.sendRedirect("community.jsp");
             
