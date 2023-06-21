@@ -58,7 +58,7 @@
 			autoplay="" muted=""></video>
 		<div>
 			<h3>모든 개발자를 위한 SNS</h3>
-			<h1>네카라쿠배</h1>
+			<h1 onclick="openAndResize()">네카라쿠배</h1>
 		</div>
 	</div>
 	<div class="box-container">

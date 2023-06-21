@@ -26,3 +26,10 @@ function moveLogout() {
 function moveSignUp() {
 	location.href = "signup.jsp"
 }
+
+function openAndResize() {
+ 	var newWindow = window.open("game/bounceball.html", "_blank");
+  	newWindow.addEventListener("load", function() {
+    	newWindow.resizeTo(800, 600);
+ 	});
+}
