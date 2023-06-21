@@ -68,9 +68,8 @@
 			<ul>
 				<%
 				BoardDao dao = new BoardDao();
-				ArrayList<BoardDto> dtos = dao.best_list();
-				%>
-				<%
+				ArrayList<BoardDto> dtos = dao.Know_list();
+				
 				int count = 0;
 				for (BoardDto dto : dtos) {
 					if (count >= 5) {
@@ -78,35 +77,37 @@
 					}
 				%>
 				<li>
-					<div onclick="moveCommunityPage()" id="left">
+					<div onclick="goToKnowPage(<%=dto.getNumber()%>)" id="left">
 						<h3><%=dto.getTitle()%></h3>
-						<small>작성자: <%=dto.getWriter()%> </small> <small> | </small> <small>작성일:
-							<%=dto.getRegdate()%> </small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%> </small>
+						<small>작성자: <%=dto.getWriter()%></small> <small> | </small> <small>작성일:
+							<%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
 					</div>
 					<div id="right">
 						<img src="images/icon_chat.png" alt="댓글"> <small><%=dto.getReply_cnt() %></small>
 						<img src="images/icon_heart.png" alt="좋아요"> <small><%=dto.getLike() %></small>
 					</div>
 				</li>
-				<% count++;
-					} %>
+				<%
+				count++;
+				}
+				%>
 			</ul>
 		</div>
 		<div class="box" id="box1">
 			<h2>커뮤니티</h2>
 			<ul>
 				<%
-				ArrayList<BoardDto> dtos1 = dao.Com_list();
-				%>
-				<%
+				
+				ArrayList<BoardDto> dtos1 = dao.Know_list();
+				
 				int count1 = 0;
-				for (BoardDto dto : dtos) {
+				for (BoardDto dto : dtos1) {
 					if (count1 >= 5) {
 						break;
 					}
 				%>
 				<li>
-					<div onclick="goToCommunityPage(<%=dto.getNumber()%>)" id="left">
+					<div onclick="goToKnowPage(<%=dto.getNumber()%>)" id="left">
 						<h3><%=dto.getTitle()%></h3>
 						<small>작성자: <%=dto.getWriter()%></small> <small> | </small> <small>작성일:
 							<%=dto.getRegdate()%></small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%></small>
