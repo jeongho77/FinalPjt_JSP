@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="write.css">
-<script type="text/javascript" src="board/community.js"></script>
+<script type="text/javascript" src="community.js"></script>
 <title>글 작성하기</title>
 </head>
 
@@ -15,7 +15,7 @@
 	<header>
 		<img src="../images/title.png" onclick="moveMain()" alt="타이틀">
 		<nav>
-			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> 
+			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/community.jsp'" class="w-btn">커뮤니티</span> 
 			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>
 			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'" class="w-btn">질문과 답변</span>
 			
