@@ -114,6 +114,9 @@ button {
     align-items: center;
 }
 
+.login-success p {
+	font-size: 2em;
+}
 .postcontainer {
     background-image: linear-gradient(rgba(255, 255, 255, 0.231),
             rgba(0, 0, 0, 0.8)), url("images/background.jpg");

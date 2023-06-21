@@ -20,37 +20,39 @@
 	<header>
 		<img src="images/title.png" onclick="moveMain()" alt="타이틀">
 		<nav>
-			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> <span
-				onclick="moveKnowledge()" class="w-btn">지식</span> <span
-				onclick="moveQ()" class="w-btn">질문과 답변</span>
+			<span onclick="location.href='intro.jsp'" class="w-btn">소개</span>
+			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> 
+			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'"
+				class="w-btn">지식</span> 
+			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'"
+				class="w-btn">질문과 답변</span>
+			<span onclick="location.href='compiler.jsp'" class="w-btn">컴파일러</span>
+			
 		</nav>
+		<%
+		if (session.getAttribute("user") == null) {
+		%>
 		<div>
-			<%
-			if (session.getAttribute("user") == null) {
-			%>
-			<div>
-				<button onclick="moveLogin()" class="w-btn w-btn-indigo"
-					type="button">로그인</button>
-				<button onclick="moveSignup()" class="w-btn w-btn-indigo"
-					type="button">회원가입</button>
-			</div>
-			<%
-			} else {
-			%>
-			<div class="login-success">
-				<p>
-					환영합니다.
-					<%=session.getAttribute("user")%>님
-				</p>
-				<button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
+			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
+				type="button">로그인</button>
+			<button onclick="moveSignUp()" class="w-btn w-btn-indigo"
+				type="button">회원가입</button>
+		</div>
+		<%
+		} else {
+		%>
+		<div class="login-success">
+			<p>  
+				<%=session.getAttribute("user")%>님
+			</p>
+			<button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
 				type="button">회원정보수정</button>
 			<button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo"
-				type="button">로그아웃</button>
-			</div>
-			<%
-			}
-			%>
+				type="button">로그아웃</button>  
 		</div>
+		<%
+		}
+		%>
 	</header>
 	<main class="container">
 		<section class="main-list">
@@ -58,7 +60,7 @@
 				<h2>글 작성하기</h2>
 			</div>
 			<form action="com_update_ok.jsp" method="get">
-				<div class="input-group">
+				<div class="input-group" style="display:none">
 					<p>
 						글 번호<input type="text" name="number" value="<%=dto.getNumber()%>" class="WNumber" readOnly>
 					</p>
@@ -67,7 +69,7 @@
 					<label for="title">제목</label> <input type="text" id="title"
 						name="title" value="<%=dto.getTitle()%>">
 				</div>
-				<div class="input-group">
+				<div class="input-group" style="display:none">
 					<label for="title">카테고리</label>
 					<div class="radio-group">
 						<label> <input type="radio" name="author"

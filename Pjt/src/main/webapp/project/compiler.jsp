@@ -1,12 +1,3 @@
-<%
-/*===============================
-작성자 : qbnyp
-작성일 : 2023. 6. 21.
-프로그램 기능 : 
-==============================*/
-%>
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,10 +6,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="edituser.css">
+    <link rel="stylesheet" href="intro.css">
     <script type="text/javascript" src="index.js"></script>
     <title>Nekarakubae - 개발자 커뮤니티</title>
 </head>
+
+<script>SEC_HTTPS = true;
+    SEC_BASE = "compilers.widgets.sphere-engine.com";
+    (function (d, s, id) {
+        SEC = window.SEC || (window.SEC = []);
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return; js = d.createElement(s); js.id = id;
+        js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, "script", "sphere-engine-compilers-jssdk"));
+</script>
 
 <body>
     <header>
@@ -46,9 +48,6 @@
 		} else {
 		%>
 		<div class="login-success">
-			<p>  
-				<%=session.getAttribute("user")%>님
-			</p>
 			<button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
 				type="button">회원정보수정</button>
 			<button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo"
@@ -58,31 +57,11 @@
 		}
 		%>
 	</header>
-    <div class="img1">
-        <h2>나의 정보 수정</h2>
+    <div class="welcome-container">
+        <h2 class="welcome-title">컴파일러</h2>
+        <p class="welcome-message">바쁜 개발자들을 위해 간단한 코딩 테스트를 할 수 있는 공간입니다. Java, c, python 등 다양한 프로그래밍 언어를 지원하고 있습니다.</p>
     </div>
-    <main class="main-container">
-        <div>
-            <form class="user-form" action="edituser_ok.jsp" >
-                <div class="form-group">
-                  <label for="name">이름 </label>
-                  <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
-                </div>
-              
-                <div class="form-group">
-                  <label for="email">이메일 </label>
-                  <input type="email" id="email" name="email" placeholder="이메일을 입력하세요">
-                </div>
-              
-                <div class="form-group">
-                  <label for="password">비밀번호 </label>
-                  <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요">
-                </div>
-
-                <button type="submit" class="w-btn">저장</button>
-              </form>
-        </div>
-    </main>
+    <div class="sec-widget" data-widget="9e1e25c224b32a941cccc468d284e148"></div>
     <footer>
         <p>Nekarakubae &copy; 2023. All rights reserved.</p>
     </footer>

@@ -4,7 +4,6 @@
 <%@page import="project.*"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
-<html lang="ko">
 <html>
 
 <head>
@@ -20,12 +19,14 @@
 	<header>
 		<img src="images/title.png" onclick="moveMain()" alt="타이틀">
 		<nav>
-			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> <span
-				onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'"
-				class="w-btn">지식</span> <span
-				onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'"
+			<span onclick="location.href='intro.jsp'" class="w-btn">소개</span>
+			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> 
+			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'"
+				class="w-btn">지식</span> 
+			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'"
 				class="w-btn">질문과 답변</span>
-
+			<span onclick="location.href='compiler.jsp'" class="w-btn">컴파일러</span>
+			
 		</nav>
 		<%
 		if (session.getAttribute("user") == null) {
@@ -33,7 +34,7 @@
 		<div>
 			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
 				type="button">로그인</button>
-			<button onclick="moveSignup()" class="w-btn w-btn-indigo"
+			<button onclick="moveSignUp()" class="w-btn w-btn-indigo"
 				type="button">회원가입</button>
 		</div>
 		<%
@@ -41,7 +42,6 @@
 		%>
 		<div class="login-success">
 			<p>  
-				환영합니다.
 				<%=session.getAttribute("user")%>님
 			</p>
 			<button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
@@ -68,7 +68,7 @@
 			<ul>
 				<%
 				BoardDao dao = new BoardDao();
-				ArrayList<BoardDto> dtos = dao.Know_list();
+				ArrayList<BoardDto> dtos = dao.best_list();
 				
 				int count = 0;
 				for (BoardDto dto : dtos) {
@@ -98,7 +98,7 @@
 			<ul>
 				<%
 				
-				ArrayList<BoardDto> dtos1 = dao.Know_list();
+				ArrayList<BoardDto> dtos1 = dao.Com_list();
 				
 				int count1 = 0;
 				for (BoardDto dto : dtos1) {

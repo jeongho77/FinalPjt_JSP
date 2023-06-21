@@ -13,41 +13,34 @@
 
 <body>
 	<header>
-		<img src="../images/title.png" onclick="moveMain()" alt="타이틀">
-		<nav>
-			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/community.jsp'" class="w-btn">커뮤니티</span> 
-			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>
+        <img src="../images/title.png" onclick="location.href='<%=request.getContextPath()%>/project/index.jsp'" alt="타이틀">
+        <nav>
+        	<span onclick="location.href='../intro.jsp'" class="w-btn">소개</span>
+            <span onclick="location.href='<%=request.getContextPath()%>/project/board_page/community.jsp'" class="w-btn">커뮤니티</span>
+            <span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>
 			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/qna.jsp'" class="w-btn">질문과 답변</span>
-			
-		</nav>
-		<div>
-			<%
-			if (session.getAttribute("user") == null) {
-			%>
-			<div>
-				<button onclick="moveLogin()" class="w-btn w-btn-indigo"
-					type="button">로그인</button>
-				<button onclick="moveSignup()" class="w-btn w-btn-indigo"
-					type="button">회원가입</button>
-			</div>
-			<%
-			} else {
-			%>
-			<div class="login-success">
-				<p>
-					환영합니다.
-					<%=session.getAttribute("user")%>님
-				</p>
-				<button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
+			<span onclick="location.href='../compiler.jsp'" class="w-btn">컴파일러</span>
+        </nav>
+        <div>
+          <%  
+           if (session.getAttribute("user") == null) {
+           
+         %>
+             <button onclick="location.href='<%=request.getContextPath()%>/project/login.jsp'" class="w-btn w-btn-indigo" type="button">
+                로그인
+            </button>
+            <button onclick="location.href='<%=request.getContextPath()%>/project/signup.jsp'" class="w-btn w-btn-indigo" type="button">
+                회원가입
+            </button>
+        <%
+        }else{
+            %><button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
 				type="button">회원정보수정</button>
 			<button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo"
 				type="button">로그아웃</button>
-			</div>
-			<%
-			}
-			%>
-		</div>
-	</header>
+        <%   }%>
+        </div>
+    </header>
 
 	<main class="container">
 		<section class="main-list">

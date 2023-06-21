@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'neon';
-    src: url('../font/JalnanOTF.otf') format('opentype');
+    src: url('font/JalnanOTF.otf') format('opentype');
 }
 
 html {
@@ -13,6 +13,12 @@ body {
     padding: 0;
     padding-top: 150px;
 }
+
+.login-success {
+    display: flex;
+    align-items: center;
+}
+
 
  /* Header 스타일 */
  header {
@@ -122,10 +128,6 @@ button {
 .page-title h2 {
     font-size: 24px;
     margin-bottom: 50px;
-}
-
-.WNumber {
-	margin-top: 10px;
 }
 
 .main-list {

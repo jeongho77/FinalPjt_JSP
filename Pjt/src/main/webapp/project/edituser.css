@@ -12,7 +12,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-top: 105px;
+    padding-top: 100px;
 }
 
 /* Header 스타일 */
@@ -170,6 +170,12 @@ button[type="submit"]:hover {
 
 .w-btn-outline:active {
     transform: scale(1.5);
+}
+
+
+.login-success {
+    display: flex;
+    align-items: center;
 }
 
 /* Footer 스타일 */

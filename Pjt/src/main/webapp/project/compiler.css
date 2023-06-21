@@ -23,7 +23,6 @@ header {
     padding: 8px;
     position: fixed;
     top: 0;
-    /* width: 100% */
     left: 0;
     right: 0;
     display: flex;
@@ -49,6 +48,25 @@ nav span {
 /* 로그인 버튼 */
 button {
     margin: 20px;
+}
+
+.welcome-container {
+    text-align: center;
+    margin: 50px;
+    margin-bottom: 50px;
+}
+
+.welcome-title {
+    font-family: 'neon', Arial, sans-serif;
+    font-size: 2.5em;
+    color: #FE9E72;
+}
+
+.welcome-message {
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 20px;
 }
 
 .w-btn {
@@ -108,6 +126,140 @@ button {
 .w-btn-outline:active {
     transform: scale(1.5);
 }
+.login-success {
+    display: flex;
+    align-items: center;
+}
+
+.postcontainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.postcontainer .image-container {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.postcontainer .image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.postcontainer .text-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.postcontainer .text-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.postcontainer .text-container p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.box-container {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box {
+    width: 45%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 2px solid #FE9E72;
+    background-color: #fff;
+}
+
+.box h2 {
+    font-family: 'neon';
+    padding: 15px;
+    background-color: #FE9E72;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.box li {
+    display: flex;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+.box li:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.box li:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.box li:hover {
+    background-color: #e9e9e9;
+    cursor: pointer;
+}
+
+.box li h3 {
+    padding-left: 10px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.box li small {
+    margin-left: 10px;
+    padding: 0;
+}
+
+.box li #left {
+    width: 85%;
+}
+
+.box li #right {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box li #right img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.box li #right small {
+    font-size: 12px;
+    margin-right: 10px;
+}
 
 /* Footer 스타일 */
 footer {
@@ -117,23 +269,4 @@ footer {
     text-align: center;
     width: 100%;
     position: absolute;
-}
-
-.welcome-container {
-    text-align: center;
-    margin: 50px;
-    margin-bottom: 50px;
-}
-
-.welcome-title {
-    font-family: 'neon', Arial, sans-serif;
-    font-size: 2.5em;
-    color: #FE9E72;
-}
-
-.welcome-message {
-    font-family: Arial, sans-serif;
-    font-size: 1.2em;
-    color: #333;
-    margin-top: 20px;
 }

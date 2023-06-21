@@ -22,3 +22,7 @@ function moveLogin() {
 function moveLogout() {
     location.href = "logout.jsp"
 }
+
+function moveSignUp() {
+	location.href = "signup.jsp"
+}
