@@ -56,7 +56,15 @@
     <div class="container">
         <section class="post-list">
             <article class="post">
-                <h2 class="post-title"> <a href = "knowledge_page.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></a></h2>
+               <%
+				if (session.getAttribute("user") == null) {
+				%>
+					<h2 class="post-title" onclick="showAlert()"><%=dto.getTitle() %></h2>
+				<% 
+				} else {
+					%>
+					<h2 class="post-title"> <a href = "community_page.jsp?number=<%=dto.getNumber()%>"> <%=dto.getTitle() %></a> </h2>
+				<%} %>
                 <div class="post-meta">
                     <div id="left">
                          <p>ÀÛ¼ºÀÚ : <%=dto.getWriter() %></p>
