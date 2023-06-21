@@ -33,7 +33,7 @@
             
         } else if (rdoValue.equals("knowledge")) {
             dao.Know_Insert(dto);
-            response.sendRedirect("knowledge.jsp");
+            //response.sendRedirect("knowledge.jsp");
             
         } else {
             dao.Qa_Insert(dto);

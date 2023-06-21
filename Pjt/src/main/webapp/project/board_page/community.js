@@ -7,7 +7,7 @@ function moveCommunity() {
 }
 
 function moveKnowledge() {
-    location.href = "knowledge.html"
+    location.href = "knowledge.jsp"
 }
 
 function moveQ() {
