@@ -14,7 +14,7 @@
     request.setCharacterEncoding("UTF-8");
     String email = request.getParameter("email");
     String pwd = request.getParameter("pwd");
-	
+	String previousPage = request.getParameter("previousPage");
     LoginDao dao = new LoginDao();
     LoginDto dto = dao.login(email, pwd);
        
@@ -22,7 +22,6 @@
     if (dto != null) {
         // 로그인 성공 시 세션 넘겨준후 index로 감
         session.setAttribute("user", dto.getNickname());
-        String previousPage = (String) session.getAttribute("previousPage");
         response.sendRedirect(previousPage);
        
     } else {
