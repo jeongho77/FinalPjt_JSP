@@ -15,7 +15,7 @@
 <%
 	int number = Integer.parseInt(request.getParameter("number"));
 	BoardDao dao = new BoardDao();
-	BoardDto dto = dao.Qa_getOne(number);
+	BoardDto dto = dao.Know_getOne(number);
 %>
 	<header>
 		<img src="../images/title.png" onclick="moveMain()" alt="타이틀">
@@ -74,8 +74,8 @@
 						<label> <input type="radio" name="author"
 							value="community"> 커뮤니티
 						</label> <label> <input type="radio" name="author"
-							value="knowledge"> 지식
-						</label> <label> <input type="radio" name="author" value="qna" checked>
+							value="knowledge" checked> 지식
+						</label> <label> <input type="radio" name="author" value="qna">
 							질문과답변
 						</label>
 					</div>

@@ -32,6 +32,7 @@
             
         } else if (rdoValue.equals("knowledge")) {
             dao.know_update(dto);
+            response.sendRedirect("board_page/knowledge.jsp");
             
         } else {
             dao.qa_update(dto);
