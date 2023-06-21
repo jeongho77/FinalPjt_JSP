@@ -42,9 +42,6 @@
 		} else {
 		%>
 		<div class="login-success">
-			<p>  
-				<%=session.getAttribute("user")%>님
-			</p>
 			<button onclick="location.href='<%=request.getContextPath()%>/project/edituser.jsp'" class="w-btn w-btn-indigo"
 				type="button">회원정보수정</button>
 			<button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo"
@@ -83,7 +80,9 @@
 				</div>
 				<div class="input-group">
 					<label for="content">내용</label>
-					<input type="text" class="form-control" value="<%=dto.getContent() %>" name="content" maxlength="2048" style="width: 500px; height: 300px;">
+					<textarea id="content" name="content" maxlength="2048">
+						<%=dto.getContent() %>
+					</textarea>
 				</div>
 				<div class="button-group">
 					<input type="hidden" name="writer" value="<%=session.getAttribute("user")%>">

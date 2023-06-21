@@ -82,7 +82,7 @@
 					<p class="date"><%=dto.getRegdate()%></p>
 				</div>
 				<div class="content">
-					<p><%=dto.getContent()%></p>
+					<p style="white-space: pre-wrap"><%=dto.getContent()%></p>
 				</div>
 			</article>
 			<div class="like-button">
