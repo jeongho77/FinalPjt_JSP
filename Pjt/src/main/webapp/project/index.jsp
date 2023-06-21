@@ -66,42 +66,42 @@
 		
 			<h2>실시간 BEST</h2>
 			<ul>
+				<%
+				BoardDao dao = new BoardDao();
+				ArrayList<BoardDto> dtos = dao.best_list();
+				%>
+				<%
+				int count = 0;
+				for (BoardDto dto : dtos) {
+					if (count >= 5) {
+						break;
+					}
+				%>
 				<li>
 					<div onclick="moveCommunityPage()" id="left">
-						<h3>글 제목 1</h3>
-						<small>작성자: 사용자1 </small> <small> | </small> <small>작성일:
-							2023-05-23 </small> <small> | </small> <small>조회수: 10 </small>
+						<h3><%=dto.getTitle()%></h3>
+						<small>작성자: <%=dto.getWriter()%> </small> <small> | </small> <small>작성일:
+							<%=dto.getRegdate()%> </small> <small> | </small> <small>조회수: <%=dto.getView_cnt()%> </small>
 					</div>
 					<div id="right">
-						<img src="images/icon_chat.png" alt="댓글"> <small>10</small>
-						<img src="images/icon_heart.png" alt="좋아요"> <small>20</small>
+						<img src="images/icon_chat.png" alt="댓글"> <small><%=dto.getReply_cnt() %></small>
+						<img src="images/icon_heart.png" alt="좋아요"> <small><%=dto.getLike() %></small>
 					</div>
 				</li>
-				<li>
-					<h3>글 제목 2</h3> <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-				</li>
-				<li>
-					<h3>글 제목 3</h3> <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-				</li>
-				<li>
-					<h3>글 제목 4</h3> <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-				</li>
-				<li>
-					<h3>글 제목 5</h3> <small>작성자: 사용자2 | 작성일: 2023-05-23</small>
-				</li>
+				<% count++;
+					} %>
 			</ul>
 		</div>
 		<div class="box" id="box1">
 			<h2>커뮤니티</h2>
 			<ul>
 				<%
-	BoardDao dao = new BoardDao();
-	ArrayList<BoardDto> dtos = dao.Com_list();
-	%>
+				ArrayList<BoardDto> dtos1 = dao.Com_list();
+				%>
 				<%
-				int count = 0;
+				int count1 = 0;
 				for (BoardDto dto : dtos) {
-					if (count >= 5) {
+					if (count1 >= 5) {
 						break;
 					}
 				%>
@@ -117,25 +117,25 @@
 					</div>
 				</li>
 				<%
-				count++;
+				count1++;
 				}
 				%>
 			</ul>
 		</div>
 
 		<script>
-function goToCommunityPage(number) {
-    var url = "http://localhost:8080/Pjt/project/board_page/community_page.jsp?number=" + number;
-    window.location.href = url;
-}
-function goToQNAPage(number) {
-    var url = "http://localhost:8080/Pjt/project/board_page/qna_page.jsp?number=" + number;
-    window.location.href = url;
-}
-function goToKnowPage(number) {
-    var url = "http://localhost:8080/Pjt/project/board_page/knowledge_page.jsp?number=" + number;
-    window.location.href = url;
-}
+			function goToCommunityPage(number) {
+    		var url = "http://localhost:8080/Pjt/project/board_page/community_page.jsp?number=" + number;
+    		window.location.href = url;
+		}
+			function goToQNAPage(number) {
+    		var url = "http://localhost:8080/Pjt/project/board_page/qna_page.jsp?number=" + number;
+    		window.location.href = url;
+		}
+			function goToKnowPage(number) {
+    		var url = "http://localhost:8080/Pjt/project/board_page/knowledge_page.jsp?number=" + number;
+    		window.location.href = url;
+		}
 </script>
 
 		<div class="box" id="box1">
@@ -145,9 +145,9 @@ function goToKnowPage(number) {
 				
 				ArrayList<BoardDto> dtos2 = dao.Know_list();
 				
-				int count1 = 0;
+				int count2 = 0;
 				for (BoardDto dto : dtos2) {
-					if (count1 >= 5) {
+					if (count2 >= 5) {
 						break;
 					}
 				%>
@@ -163,7 +163,7 @@ function goToKnowPage(number) {
 					</div>
 				</li>
 				<%
-				count1++;
+				count2++;
 				}
 				%>
 				
@@ -176,9 +176,9 @@ function goToKnowPage(number) {
 				
 				ArrayList<BoardDto> dtos3 = dao.Qa_list();
 				
-				int count2 = 0;
+				int count3 = 0;
 				for (BoardDto dto : dtos3) {
-					if (count1 >= 5) {
+					if (count3 >= 5) {
 						break;
 					}
 				%>
@@ -194,7 +194,7 @@ function goToKnowPage(number) {
 					</div>
 				</li>
 				<%
-				count1++;
+				count3++;
 				}
 				%>
 				

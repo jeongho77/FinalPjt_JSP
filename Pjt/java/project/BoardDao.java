@@ -276,6 +276,38 @@ public class BoardDao {
 		return dtos;
 	}
 	
+	public ArrayList<BoardDto> best_list() { 
+		String sql = "SELECT * "
+				+ "FROM com_board "
+				+ "JOIN knowledge_board ON com_board.number = knowledge_board.number "
+				+ "JOIN qa_board ON knowledge_board.number = qa_board.number "
+				+ "ORDER BY com_board.view_cnt DESC; ";
+		ArrayList<BoardDto> dtos = new ArrayList<BoardDto>();
+		try (
+			Connection con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql);
+		) {
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				int number = rs.getInt("number");
+				String title = rs.getString("title");
+				int reply_cnt = rs.getInt("reply_cnt");
+				String writer = rs.getString("writer");
+				String content = rs.getString("CONTENT");
+				String view_cnt = rs.getString("view_cnt");
+				int like = rs.getInt("like");
+				Date date = rs.getDate("REGDATE");
+				
+				BoardDto dto = new BoardDto(number, title, reply_cnt, writer, content, view_cnt , like, date);
+				dtos.add(dto);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return dtos;
+	}
+	
 	//1. 접근제어자      //2. 반환 데이터 타입       //3. 입력 매개변수
 	public BoardDto com_update(BoardDto dto){
 		String sql = "update com_board set title=? , CONTENT=?  where number = ?";
