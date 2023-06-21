@@ -108,7 +108,7 @@
             <div id="right">
                 <img src="images/icon_chat.png" alt="댓글"> <small>10</small>
                 <img src="images/icon_heart.png" alt="좋아요"> <small>20</small>
-            </div> 
+            </div>    
         </li>
         <%
         count++;
