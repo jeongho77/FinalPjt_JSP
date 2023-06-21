@@ -90,7 +90,7 @@
 				if (session.getAttribute("user") == null) {
 				}
 				else{%>
-				<form action="community_reply.jsp">
+				<form action="qna_reply.jsp">
 					<div class="comment-form">
 						<input type="text" placeholder="댓글을 작성해주세요." name="content"
 							class="comment-input"> <input type="hidden" name="number"
@@ -100,7 +100,7 @@
 						<%
 						}
 						%>
-						</div>
+					</div>
 				</form>
 			</article>
 			
@@ -112,7 +112,13 @@
 					<p class="comment-author"><%=reply.getWriter()%></p>
 					<p class="comment-content"><%=reply.getContent()%></p>
 					<p class="comment-date"><%=reply.getDate()%></p>
+					<%
+					if (reply.getWriter().equals(session.getAttribute("user"))) {
+					%>
 					<button id="reply_delete" type="button" onclick="location.href='../qna_reply_delete.jsp?number=<%=reply.getNumber()%>'">삭제하기</button>
+					<%
+					}
+					%>
 				</li>
 				<%
 				}

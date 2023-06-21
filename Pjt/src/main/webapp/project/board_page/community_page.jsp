@@ -28,7 +28,7 @@
 	%>
 
 	<header>
-		<img src="../images/title.png" onclick="moveMain()" alt="타이틀">
+		<img src="../images/title.png" onclick="location.href='<%=request.getContextPath()%>/project/index.jsp'" alt="타이틀">
 		<nav>
 			<span
 				onclick="location.href='<%=request.getContextPath()%>/project/board_page/community.jsp'"
@@ -42,13 +42,13 @@
 			<%
 			if (session.getAttribute("user") == null) {
 			%>
-			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
+			<button onclick="location.href='<%=request.getContextPath()%>/project/login.jsp'" class="w-btn w-btn-indigo"
 				type="button">로그인</button>
-			<button onclick="moveSignup()" class="w-btn w-btn-indigo"
+			<button onclick="location.href='<%=request.getContextPath()%>/project/signup.jsp'" class="w-btn w-btn-indigo"
 				type="button">회원가입</button>
 			<%
 			} else {
-			%><button onclick="moveLogout()" class="w-btn w-btn-indigo"
+			%><button onclick="location.href='<%=request.getContextPath()%>/project/logout.jsp'" class="w-btn w-btn-indigo"
 				type="button">로그아웃</button>
 			<%
 			}
