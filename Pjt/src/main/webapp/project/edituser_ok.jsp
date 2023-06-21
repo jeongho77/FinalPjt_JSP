@@ -24,7 +24,7 @@
 	String email = request.getParameter("email");
 	String password = request.getParameter("password");
 	String nickname = request.getParameter("nickname");
-	
+	  
 	LoginDao dao = new LoginDao();
 	LoginDto dto = new LoginDto(name,password,nickname,email,a);
 	dao.Update(dto);
