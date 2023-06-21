@@ -111,14 +111,14 @@
 				<%
 				for (ReplyDto reply : replyList) {
 				%>
-				<li>
+				<li style="position: relative;">
 					<p class="comment-author"><%=reply.getWriter()%></p>
 					<p class="comment-content"><%=reply.getContent()%></p>
 					<p class="comment-date"><%=reply.getDate()%></p>
 					<%
 					if (reply.getWriter().equals(session.getAttribute("user"))) {
 					%>
-					<button style="width:20px; height: 20px; border: none; margin: 0px; margin-left:400px;" type="button" onclick="location.href='../qna_reply_delete.jsp?number=<%=reply.getNumber()%>'">
+					<button style="width:20px; height: 20px; border: none; position: absolute; transform: translateY(-50%); top: 70%; right: 0%" type="button" onclick="location.href='../knowledge_reply_delete.jsp?number=<%=reply.getNumber()%>'">
 						<img style="width:20px; height: 20px;" class="reply_delete" src="../images/trash.jpg">
 					</button>
 					<%
