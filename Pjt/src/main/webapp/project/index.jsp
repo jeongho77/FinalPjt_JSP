@@ -34,7 +34,7 @@
 		<div>
 			<button onclick="moveLogin()" class="w-btn w-btn-indigo"
 				type="button">로그인</button>
-			<button onclick="moveSignup()" class="w-btn w-btn-indigo"
+			<button onclick="location.href='signup.jsp'" class="w-btn w-btn-indigo"
 				type="button">회원가입</button>
 		</div>
 		<%
