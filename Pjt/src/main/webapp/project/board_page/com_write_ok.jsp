@@ -22,7 +22,7 @@
 	BoardDao dao = new BoardDao();   
 	BoardDto dto = new BoardDto(title, content, writer);
 	
-	
+	 
     // 로그인 성공 시 다른 페이지로 이동
     System.out.println("등록 성공");
 	
