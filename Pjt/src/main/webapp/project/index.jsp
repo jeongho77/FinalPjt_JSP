@@ -40,7 +40,7 @@
 		} else {
 		%>
 		<div class="login-success">
-			<p>
+			<p>  
 				환영합니다.
 				<%=session.getAttribute("user")%>님
 			</p>
