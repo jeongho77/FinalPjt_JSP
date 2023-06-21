@@ -15,9 +15,10 @@
 	<header>
 		<img src="../images/title.png" onclick="moveMain()" alt="타이틀">
 		<nav>
-			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> <span
-				onclick="moveKnowledge()" class="w-btn">지식</span> <span
-				onclick="moveQ()" class="w-btn">질문과 답변</span>
+			<span onclick="moveCommunity()" class="w-btn">커뮤니티</span> 
+			<span onclick="location.href='<%=request.getContextPath()%>/project/board_page/knowledge.jsp'" class="w-btn">지식</span>
+
+				<span onclick="moveQ()" class="w-btn">질문과 답변</span>
 		</nav>
 		<div>
 			<%
